@@ -1,18 +1,18 @@
 import "@/styles/globals.css";
 
 import NextTopLoader from "nextjs-toploader";
-import { fontHeading, inter } from "@/app/ui/fonts";
+import { fontHeading, inter, lora } from "@/app/ui/fonts";
 import { siteConfig } from "@/config/site";
 // import { Analytics } from "@vercel/analytics/react";
 // import { SpeedInsights } from "@vercel/speed-insights/next";
-// import { Providers as TRPCProviders } from "../contexts/trpc-providers";
 // import { Toaster } from "@/components/ui/sonner";
-import { TailwindIndicator } from "@/components/tailwind-indicator";
-import { ThemeProvider } from "@/components/theme-provider";
+import { TailwindIndicator } from "@/components/shared/tailwind-indicator";
+import { ThemeProvider } from "@/components/shared/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
+  applicationName: siteConfig.name,
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
@@ -31,15 +31,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    creator: "@awelrisak",
+    images: [`${siteConfig.url}/og.jpg`],
+    creator: "@shadcn",
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+  manifest: `${siteConfig.url}/site.webmanifest`,
   generator: "Next.js",
-  applicationName: siteConfig.name,
+
   referrer: "origin-when-cross-origin",
   keywords: [
     "Marketing Agency",
@@ -63,7 +65,6 @@ export const metadata: Metadata = {
     "Video Marketing", // Consider if Sonamax offers video marketing
     "+ Add more specific keywords here", // Placeholder for further customization
   ],
-
   authors: [{ name: "Abdurezak Farah", url: "https://www.cabdirisaaq.com" }],
   creator: "Abdurezak Farah",
   publisher: "Finiin",
@@ -87,13 +88,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           inter.variable,
-          fontHeading.variable
+          fontHeading.variable,
+          lora.variable
         )}
       >
         <main className="relative w-full min-h-full-dvh">
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
@@ -116,7 +118,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             showAtBottom={false}
           />
           {/* <Toaster position="top-center" richColors /> */}
-          {/* <TailwindIndicator /> */}
+          <TailwindIndicator />
           {/* <Analytics /> */}
           {/* <SpeedInsights /> */}
         </main>
