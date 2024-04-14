@@ -19,10 +19,10 @@ export default function Footer() {
         )}
         <div className="flex flex-col gap-3 px-4 py-6 md:flex-row md:items-center md:justify-between">
           <div className="mt-4 md:mt-0">
-            <span className="mb-4 px-2 font-bold md:mb-7">
+            <span className="px-2 font-bold md:mb-7">
               Let&apos;s Connect on:{" "}
             </span>
-            <ul className="flex flex-wrap gap-5   md:justify-center rtl:space-x-reverse">
+            <ul className="mt-4 flex flex-wrap gap-5   md:justify-center rtl:space-x-reverse">
               {siteConfig.links.map((link) => (
                 <SocialLink key={link.name} {...link} />
               ))}
