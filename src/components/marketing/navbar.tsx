@@ -69,7 +69,7 @@ export function Navbar({ items, children }: MainNavProps) {
         </nav>
       ) : null}
 
-      <div>
+      <div className="flex gap-4">
        <Link
             href="/contact"
             className="
