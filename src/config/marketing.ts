@@ -8,16 +8,21 @@ export const marketingConfig: MarketingConfig = {
       href: "/#services",
     },
     {
-      title: "Digital marketting",
-      href: "/#digital-marketting",
+      title: "Work",
+      href: "/#work",
     },
     {
-      title: "Website design",
-      href: "/#website-design",
+      title: "Website development",
+      href: "/#website-development",
     },
+
     {
       title: "Graphic design",
       href: "/#graphic-design",
+    },
+    {
+      title: "Digital marketing",
+      href: "/#digital-marketting",
     },
     {
       title: "Blog",
@@ -34,39 +39,72 @@ export const marketingConfig: MarketingConfig = {
         Icon: siteConfig.Icon,
         links: [
           {
-            name: "About Us",
-            href: "/about-us",
-            disabled: true,
+            name: "Services",
+            href: "/#services",
           },
           {
-            name: "Donate",
-            href: "/donate",
-            disabled: true,
+            name: "Website development",
+            href: "/#website-development",
+          },
+
+          {
+            name: "Graphic design",
+            href: "/#graphic-design",
           },
           {
-            name: "Events",
-            href: "/events",
-            disabled: true,
-          },
-          {
-            name: "Books",
-            href: "/books",
-            disabled: true,
-          },
-          {
-            name: "Catalog",
-            href: "/catalog",
-            disabled: true,
-          },
-          {
-            name: "Writers",
-            href: "/writers",
-            disabled: true,
+            name: "Digital marketing",
+            href: "/#digital-marketting",
           },
           {
             name: "Blog",
             href: "/blog",
-            disabled: true,
+          },
+          {
+            name: "Pricing",
+            href: "/pricing",
+          },
+        ],
+      },
+      {
+        title: "Services",
+        links: [
+          {
+            name: "Website development",
+            href: "/#services",
+          },
+          {
+            name: "Website design",
+            href: "/#services",
+          },
+          
+          {
+            name: "App Development",
+            href: "/#services",
+          },
+          {
+            name: "SaaS App development",
+            href: "/#services",
+          },
+          {
+            name: "AI App Development",
+            href: "/#services",
+          },
+          {
+            name: "E-commerce Store",
+            href: "/#services",
+          },
+          {
+            name: "Authentication",
+            href: "/#services",
+          },
+          
+          {
+            name: "Graphic design",
+            href: "/#services",
+          },
+          {
+            name: "Digital marketing",
+            href: "/#services",
           },
         ],
       },
@@ -80,6 +118,11 @@ export const marketingConfig: MarketingConfig = {
           },
           {
             name: "Terms of Use",
+            href: "/terms-of-use",
+            disabled: true,
+          },
+          {
+            name: "Refund Policy",
             href: "/terms-of-use",
             disabled: true,
           },

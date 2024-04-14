@@ -20,11 +20,18 @@ import {
   Settings,
   SunMedium,
   Trash,
-  Twitter,
   User,
   X,
-  type LucideIcon,
+  type LucideIcon
 } from "lucide-react";
+
+import {
+  IoLogoFacebook,
+  IoLogoInstagram,
+  IoLogoTwitter,
+  IoLogoWhatsapp,
+  IoMail
+} from "react-icons/io5";
 
 export type Icon = LucideIcon;
 
@@ -67,6 +74,10 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  twitter: Twitter,
+  twitter: IoLogoTwitter,
+  facebook: IoLogoFacebook,
+  instagram: IoLogoInstagram,
+  whatsapp: IoLogoWhatsapp,
+  mail: IoMail,
   check: Check,
 };

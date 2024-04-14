@@ -1,15 +1,15 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
+import * as React from "react";
 
-import { MainNavItem } from "types";
+import Menubar from "@/components/marketing/menubar";
+import { Icons } from "@/components/shared/icons";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { Icons } from "@/components/shared/icons";
-import MobileNav from "@/components/marketing/menubar";
-
+import { MainNavItem } from "types";
+import { useActiveItem } from "@/hooks/use-active-item";
 
 interface MainNavProps {
   items?: MainNavItem[];
@@ -19,6 +19,10 @@ interface MainNavProps {
 export function Navbar({ items, children }: MainNavProps) {
   const segment = useSelectedLayoutSegment();
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
+
+  const itemIds = items?.map((item) => item.title) || [];
+
+  // const active = useActiveItem(itemIds);
 
   return (
     <div className="flex flex-1 gap-6 md:gap-10 ">
@@ -39,7 +43,11 @@ export function Navbar({ items, children }: MainNavProps) {
                 item.href.startsWith(`/${segment}`)
                   ? "text-foreground"
                   : "text-foreground/60",
-                item.disabled && "cursor-not-allowed opacity-80"
+
+                item.disabled && "cursor-not-allowed opacity-80",
+                // {
+                //   "text-foreground/60": active != item.title,
+                // },
               )}
             >
               {item.title}
@@ -55,7 +63,12 @@ export function Navbar({ items, children }: MainNavProps) {
         <span className="font-bold">Menu</span>
       </button>
       {showMobileMenu && items && (
-        <MobileNav items={items}>{children}</MobileNav>
+        <Menubar
+          items={items}
+          handleClose={() => setShowMobileMenu(!showMobileMenu)}
+        >
+          {children}
+        </Menubar>
       )}
     </div>
   );

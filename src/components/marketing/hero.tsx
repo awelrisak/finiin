@@ -1,16 +1,20 @@
-import Link from "next/link";
-import React from "react";
 import { Button } from "@/components/ui/moving-border";
 import { Spotlight } from "@/components/ui/spotlight";
+import Link from "next/link";
+
 
 export default function Hero() {
   return (
-    <div className="relative">
+    <div className="relative h-[calc(100vh-6rem)]">
       <Spotlight
         className="-top-40 left-0 md:-top-20 md:left-60"
         fill="white"
       />
-      <h1 className="to text-balance bg-neutral-700 bg-opacity-50 bg-gradient-to-b from-neutral-950 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:bg-neutral-400 dark:from-neutral-50 md:text-7xl">
+
+      <h1
+        
+        className="to text-balance bg-neutral-700 bg-opacity-50 bg-gradient-to-b from-neutral-950 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:bg-neutral-400 dark:from-neutral-50 md:text-7xl"
+      >
         Create, grow, and <br /> scale your business
       </h1>
       <p className="mx-auto mt-4 max-w-lg  px-4 text-center text-lg font-normal text-muted-foreground">

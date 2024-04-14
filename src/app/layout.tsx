@@ -103,7 +103,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </ThemeProvider>
 
           <NextTopLoader
-            color="red"
+            color="blue"
             initialPosition={0.08}
             crawlSpeed={200}
             height={3}

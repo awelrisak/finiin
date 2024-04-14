@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ModeToggle } from "../shared/mode-toggle";
 export default function Header() {
   return (
-    <header className="sticky top-0 container z-40 bg-background ">
+    <header className="sticky top-0 container z-40 min-h-20 bg-background ">
       <div className="flex h-20 items-center justify-between py-6">
         <Navbar items={marketingConfig.mainNav} />
         <nav>

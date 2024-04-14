@@ -1,38 +1,7 @@
 import { SiteConfig } from "types";
 
- import {
-  IoCall,
-  IoGlobeOutline,
-  IoLocation,
-  IoLogoBehance,
-  IoLogoBitbucket,
-  IoLogoCodepen,
-  IoLogoDiscord,
-  IoLogoDribbble,
-  IoLogoFacebook,
-  IoLogoFoursquare,
-  IoLogoGithub,
-  IoLogoGitlab,
-  IoLogoInstagram,
-  IoLogoLinkedin,
-  IoLogoMedium,
-  IoLogoPinterest,
-  IoLogoReddit,
-  IoLogoRss,
-  IoLogoSkype,
-  IoLogoSlack,
-  IoLogoSnapchat,
-  IoLogoSoundcloud,
-  IoLogoTiktok,
-  IoLogoTumblr,
-  IoLogoTwitter,
-  IoLogoVimeo,
-  IoLogoVk,
-  IoLogoWhatsapp,
-  IoLogoYoutube,
-  IoMail,
-} from "react-icons/io5";
-import { Icons } from "@/components/shared/icons";
+ import { Icons } from "@/components/shared/icons";
+
 
 export const siteConfig: SiteConfig = {
   name: "Sonamax",
@@ -53,34 +22,34 @@ export const siteConfig: SiteConfig = {
     telephone: "+252699992045",
   },
   links: [
-    // {
-    //   name: "Email",
-    //   href: "#",
-    //   Icon: Mail,
-    //   external: true,
-    // },
+    {
+      name: "Email",
+      href: "#",
+      Icon: Icons.mail,
+      external: true,
+    },
     {
       name: "X",
       href: "#",
-      Icon: IoLogoTwitter,
+      Icon: Icons.twitter,
       external: true,
     },
     {
       name: "Facebook",
       href: "https://www.facebook.com/",
-      Icon: IoLogoFacebook,
+      Icon: Icons.facebook,
       external: true,
     },
     {
       name: "Instagram",
       href: "https://www.instagram.com/",
-      Icon: IoLogoInstagram,
+      Icon: Icons.instagram,
       external: true,
     },
     {
       name: "WhatsApp",
       href: "https://wa.me/252634400000",
-      Icon: IoLogoWhatsapp,
+      Icon: Icons.whatsapp,
       external: true,
     },
   ],

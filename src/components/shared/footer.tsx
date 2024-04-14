@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
-import {type FooterSection, Link as LinkType } from "types";
+import { type FooterSection, Link as LinkType } from "types";
 import { marketingConfig } from "@/config/marketing";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -22,6 +22,7 @@ export default function Footer() {
             © {marketingConfig?.footer?.copyYears} &nbsp; - &nbsp;
             <Link href="/">{siteConfig.name}</Link>. All Rights Reserved.
           </span>
+
           <ul className="mt-4 flex flex-wrap justify-center  gap-5 md:mt-0 rtl:space-x-reverse">
             {siteConfig.links.map((link) => (
               <SocialLink key={link.name} {...link} />
