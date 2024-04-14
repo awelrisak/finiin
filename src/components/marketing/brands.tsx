@@ -27,7 +27,7 @@ const Brands = () => {
     <div>
       <div className=" relative   z-10 mx-auto w-full  p-4 pt-20 md:pt-32">
         <div
-          className="bg-opacity-50 bg-gradient-to-b from-purple-500 to-sky-200 bg-clip-text 
+          className="bg-opacity-50 bg-gradient-to-b from-purple-500 to-sky-400 dark:to-sky-200 bg-clip-text 
         text-center font-heading text-4xl text-transparent md:pb-8 md:text-7xl"
         >
           The best brands <br /> choose us
