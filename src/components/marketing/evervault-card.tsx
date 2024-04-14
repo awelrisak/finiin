@@ -9,14 +9,14 @@ export function EvervaultCardSnippet() {
       <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
       <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white" />
 
-      <EvervaultCard text="hover" />
+      <EvervaultCard text="Sonamax" />
 
       <h2 className="text-white  mt-4 text-sm font-light">
         Hover over this card to reveal an awesome effect. Running out of copy
         here.
       </h2>
       <p className="text-sm border font-light border-white/[0.2]  rounded-full mt-4  text-white px-2 py-0.5">
-        Watch me hover
+        See designs
       </p>
     </div>
   );
