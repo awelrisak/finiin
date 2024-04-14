@@ -9,7 +9,7 @@ export default function Header() {
     <header className="sticky top-0 container z-40 min-h-20 bg-background ">
       <div className="flex h-20 items-center justify-between py-6">
         <Navbar items={marketingConfig.mainNav} />
-        <nav>
+        <nav className="hidden md:inline-flex gap-4">
           <Link
             href="/contact"
             className="
@@ -23,7 +23,7 @@ export default function Header() {
           >
             Contact
           </Link>
-          <div className="hidden md:inline-block p-3">
+          <div className="hidden md:inline-block">
             <ModeToggle />
           </div>
         </nav>
