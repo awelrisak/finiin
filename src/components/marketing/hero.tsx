@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative h-[calc(100dvh-5rem)]">
+    <div className="relative h-[calc(100vh-6rem)]">
       <Spotlight
         className="-top-40 left-0 md:-top-20 md:left-60"
         fill="white"
