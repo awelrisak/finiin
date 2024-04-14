@@ -86,7 +86,7 @@ export function Navbar({ items, children }: MainNavProps) {
         className="flex items-center space-x-2 md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
-        {showMobileMenu ? <Icons.close /> : <Icons.logo />}
+        {showMobileMenu ? <Icons.close /> : <Icons.menu />}
        {/* <span className="font-bold">Menu</span>*/}
       </button>
       </div>
