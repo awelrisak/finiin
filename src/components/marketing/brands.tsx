@@ -53,12 +53,12 @@ const Brands = () => {
           ))}
         </div>
 
-        <div className="font-lora flex items-center justify-center px-8 pb-4 pt-10 text-center text-xl  text-white  md:pt-0 xl:text-2xl">
+        <div className="font-lora flex items-center justify-center px-8 pb-4 pt-10 text-center text-xl  md:pt-0 xl:text-2xl">
           &quot;We got rid of nearly a dozen different tools because of what
-          Bird does for us.&quot;
+          Sonamax does for us.&quot;
         </div>
 
-        <div className="flex flex-col items-center justify-center text-white">
+        <div className="flex flex-col items-center justify-center ">
           <Image
             src="/images/logo.svg"
             alt="logo"
