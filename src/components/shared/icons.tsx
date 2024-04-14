@@ -22,6 +22,7 @@ import {
   Trash,
   User,
   X,
+  Menu
   type LucideIcon
 } from "lucide-react";
 
@@ -80,4 +81,5 @@ export const Icons = {
   whatsapp: IoLogoWhatsapp,
   mail: IoMail,
   check: Check,
+  menu: Menu
 };
