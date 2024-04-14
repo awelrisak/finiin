@@ -6,24 +6,23 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative h-[calc(100vh-6rem)]">
+    <div className="relative h-[calc(100vh-8rem)]">
       <Spotlight
         className="-top-40 left-0 md:-top-20 md:left-60"
         fill="white"
       />
        
-      <div className="h-full flex flex-col justify-between">
-      <div>
+      
       <h1
-        className="text-balance bg-opacity-50 bg-gradient-to-b from-neutral-950 to-neutral-700 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:bg-neutral-400 dark:from-neutral-50 md:text-7xl"
+        className="text-balance bg-opacity-50 bg-gradient-to-b from-neutral-950 to-neutral-700 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:to-neutral-400 dark:from-neutral-50 md:text-7xl"
       >
         Create, grow, and <br /> scale your business
       </h1>
-      <p className="mx-auto mt-4 max-w-lg  px-4 text-center text-lg font-normal text-muted-foreground">
+      <p className="mx-auto mt-4 mb-6 max-w-lg  px-4 text-center text-lg font-normal text-muted-foreground">
         Custom tailored solutions for your business. We are a team of creatives
         who are excited to help you grow your business.
       </p>
-      </div>
+     
 
       <div className="mx-auto my-6 flex w-48 items-center justify-center p-2">
         <Button
@@ -34,8 +33,8 @@ export default function Hero() {
         >
           Book a call
         </Button>
-      </div>
-      </div>
+ </div>
+      
     </div>
   );
 }
