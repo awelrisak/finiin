@@ -90,7 +90,7 @@ const FAQS = () => {
       <div className="px-10  md:p-20 mt-2 mb-3">
         Can’t find the answer you’re looking for?{" "}
         <a href="mailto:youremail@example.com" className="text-lime-700 dark:text-lime-500">Reach out to us</a> and we will
-        get in touch with you
+        get in touch with you.
       </div>
     </div>
   );
