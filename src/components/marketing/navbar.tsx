@@ -26,8 +26,21 @@ export function Navbar({ items, children }: MainNavProps) {
 
   return (
     <div className="flex flex-1 gap-6 md:gap-10 ">
-      <Link href="/" className="hidden items-center space-x-2 md:flex">
+      <Link href="/" className="flex items-center space-x-2">
         <Icons.logo />
+        {/*<Button
+          variant="outline"
+          className="flex items-center space-x-2 md:hidden"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+          size="icon"
+          aria-label="Toggle mobile menu"
+        >
+          {showMobileMenu ? (
+            <Close className="h-[1.2rem] w-[1.2rem]" />
+          ) : (
+            <Menu className="h-[1.2rem] w-[1.2rem]" />
+          )}
+        </Button>*/}
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
