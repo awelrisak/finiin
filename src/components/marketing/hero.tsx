@@ -25,7 +25,7 @@ export default function Hero() {
       </p>
       </div>
 
-      <div className="mx-auto mt-auto my-6 flex w-48 items-center justify-center p-2">
+      <div className="mx-auto my-6 flex w-48 items-center justify-center p-2">
         <Button
           as={Link}
           href="appointment"
