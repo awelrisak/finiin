@@ -7,7 +7,7 @@ const Services = () => {
     <div className="mx-auto max-w-5xl py-20 px-4" id="services">
       <div
         className="font-heading mt-20 bg-opacity-50 bg-gradient-to-b from-blue-500
-         to-neutral-50 bg-clip-text pb-5
+         to-neutral-950 dark:to-neutral-50 bg-clip-text pb-5
           text-center text-4xl text-transparent md:text-7xl"
       >
         Streamline your business with our services
