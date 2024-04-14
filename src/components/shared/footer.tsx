@@ -18,16 +18,20 @@ export default function Footer() {
           </div>
         )}
         <div className="flex flex-col gap-3 px-4 py-6 md:flex-row md:items-center md:justify-between">
-          <span className="text-sm text-muted-foreground sm:text-center">
+          <div className="mt-4 md:mt-0">
+            <span className="mb-4 px-2 font-bold md:mb-7">
+              Let&apos;s Connect on:{" "}
+            </span>
+            <ul className="flex flex-wrap gap-5   md:justify-center rtl:space-x-reverse">
+              {siteConfig.links.map((link) => (
+                <SocialLink key={link.name} {...link} />
+              ))}
+            </ul>
+          </div>
+          <span className="mt-6 text-sm text-muted-foreground sm:text-center">
             © {marketingConfig?.footer?.copyYears} &nbsp; - &nbsp;
             <Link href="/">{siteConfig.name}</Link>. All Rights Reserved.
           </span>
-
-          <ul className="mt-4 flex flex-wrap justify-center  gap-5 md:mt-0 rtl:space-x-reverse">
-            {siteConfig.links.map((link) => (
-              <SocialLink key={link.name} {...link} />
-            ))}
-          </ul>
         </div>
       </div>
     </footer>
