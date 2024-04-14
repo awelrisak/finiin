@@ -93,7 +93,7 @@ style={{
 */}
         {items.map((item, idx) => (
           <li
-            className="bg-card text-card-foreground relative w-[350px]  max-w-full flex-shrink-0 rounded-2xl border border-b-0 border-slate-700 px-8 py-6 md:w-[450px]"
+            className="bg-gradient-to-b from-slate-50 to-slate-200  dark:from-slate-800 dark:to-slate-900 text-card-foreground relative w-[350px]  max-w-full flex-shrink-0 rounded-2xl border border-b-0 border-slate-700 px-8 py-6 md:w-[450px]"
             
             key={item.name}
           >
