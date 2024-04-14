@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative h-[calc(100vh-8rem)]">
+    <div className="relative h-[calc(100vh-9rem)]">
       <Spotlight
         className="-top-40 left-0 md:-top-20 md:left-60"
         fill="white"
@@ -14,7 +14,7 @@ export default function Hero() {
        
       
       <h1
-        className="text-balance bg-opacity-50 bg-gradient-to-b from-neutral-950 to-neutral-700 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:to-neutral-400 dark:from-neutral-50 md:text-7xl"
+        className="text-balance bg-opacity-50 bg-gradient-to-b from-neutral-950 to-neutral-700 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:from-neutral-50 dark:to-neutral-400 md:text-7xl"
       >
         Create, grow, and <br /> scale your business
       </h1>
@@ -23,6 +23,7 @@ export default function Hero() {
         who are excited to help you grow your business.
       </p>
      
+<div className="my-4" /> 
 
       <div className="mx-auto my-6 flex w-48 items-center justify-center p-2">
         <Button
