@@ -12,7 +12,7 @@ export default function Hero() {
         fill="white"
       />
        
-      <h1 className="text-balance bg-gradient-to-b from-neutral-950 to-neutral-700 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:from-neutral-50 dark:to-neutral-400 md:text-7xl">
+      <h1 className="text-balance bg-gradient-to-b from-neutral-950 to-neutral-700 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:from-neutral-50 dark:to-red-400 md:text-7xl">
   Create, grow, and <br /> scale your business
 </h1>
 
