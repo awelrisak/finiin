@@ -25,7 +25,7 @@ export function Navbar({ items, children }: MainNavProps) {
   // const active = useActiveItem(itemIds);
 
   return (
-    <div className="flex flex-1 gap-6 md:gap-10 ">
+    <div className="flex flex-1 items-center justify-between gap-6 md:gap-10 ">
       <Link href="/" className="flex items-center space-x-2">
         <Icons.logo />
         {/*<Button
@@ -41,7 +41,7 @@ export function Navbar({ items, children }: MainNavProps) {
             <Menu className="h-[1.2rem] w-[1.2rem]" />
           )}
         </Button>*/}
-        <span className="hidden font-bold sm:inline-block">
+        <span className="font-bold inline-block">
           {siteConfig.name}
         </span>
       </Link>
@@ -68,6 +68,20 @@ export function Navbar({ items, children }: MainNavProps) {
           ))}
         </nav>
       ) : null}
+
+      <div>
+       <Link
+            href="/contact"
+            className="
+            inline-flex h-12 animate-shimmer items-center justify-center 
+            rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] 
+            bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors
+             focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2
+              focus:ring-offset-slate-50
+            "
+          >
+            Contact
+          </Link>
       <button
         className="flex items-center space-x-2 md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -75,6 +89,7 @@ export function Navbar({ items, children }: MainNavProps) {
         {showMobileMenu ? <Icons.close /> : <Icons.logo />}
         <span className="font-bold">Menu</span>
       </button>
+      </div>
       {showMobileMenu && items && (
         <Menubar
           items={items}
