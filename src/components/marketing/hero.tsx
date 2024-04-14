@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/moving-border";
 import { Spotlight } from "@/components/ui/spotlight";
-import StarsCanvas from "@/components/ui/srars";
+
 import Link from "next/link";
 
 
@@ -12,7 +12,7 @@ export default function Hero() {
         fill="white"
       />
        
-      <StarsCanvas />
+      
       
       <h1
         className="text-balance bg-opacity-50 bg-gradient-to-b from-neutral-950 to-neutral-700 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:bg-neutral-400 dark:from-neutral-50 md:text-7xl"
