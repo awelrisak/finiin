@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="mx-auto my-6 flex w-48 items-center justify-center p-2">
         <Button
           as={Link}
-          href="appointment"
+          href="book-a-call"
           borderRadius="1.75rem"
           className="border-neutral-200 bg-white uppercase text-black dark:border-slate-800 dark:bg-slate-900 dark:text-white"
         >
