@@ -25,10 +25,23 @@ export function Navbar({ items, children }: MainNavProps) {
   // const active = useActiveItem(itemIds);
 
   return (
-    <div className="flex flex-1 gap-6 md:gap-10 ">
-      <Link href="/" className="hidden items-center space-x-2 md:flex">
+    <div className="flex flex-1 items-center justify-between gap-6 md:gap-10 ">
+      <Link href="/" className="flex items-center space-x-2">
         <Icons.logo />
-        <span className="hidden font-bold sm:inline-block">
+        {/*<Button
+          variant="outline"
+          className="flex items-center space-x-2 md:hidden"
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+          size="icon"
+          aria-label="Toggle mobile menu"
+        >
+          {showMobileMenu ? (
+            <Close className="h-[1.2rem] w-[1.2rem]" />
+          ) : (
+            <Menu className="h-[1.2rem] w-[1.2rem]" />
+          )}
+        </Button>*/}
+        <span className="font-bold inline-block">
           {siteConfig.name}
         </span>
       </Link>
@@ -55,13 +68,28 @@ export function Navbar({ items, children }: MainNavProps) {
           ))}
         </nav>
       ) : null}
+
+      <div className="flex gap-4">
+       <Link
+            href="/contact"
+            className="
+            md:hidden inline-flex h-10 px-4 py-2 animate-shimmer items-center justify-center 
+            rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] 
+            bg-[length:200%_100%] font-medium text-slate-400 transition-colors
+             focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2
+              focus:ring-offset-slate-50
+            "
+          >
+            Contact
+          </Link>
       <button
         className="flex items-center space-x-2 md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
-        {showMobileMenu ? <Icons.close /> : <Icons.logo />}
-        <span className="font-bold">Menu</span>
+        {showMobileMenu ? <Icons.close /> : <Icons.menu />}
+       {/* <span className="font-bold">Menu</span>*/}
       </button>
+      </div>
       {showMobileMenu && items && (
         <Menubar
           items={items}

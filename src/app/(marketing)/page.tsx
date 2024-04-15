@@ -13,11 +13,12 @@ export default function Home() {
   return (
     <main className="relative z-10 mx-auto w-full p-4 px-2 pt-10 md:pt-20">
       <div className="relative">
-        <Hero />
         <StarsCanvas />
+        <Hero />
       </div>
-
-      <div className="w-full pt-20">
+        
+            
+      <div className="w-full pt-10">
         <SliderOne />
 
         <WebsiteDevelopment />
