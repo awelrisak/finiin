@@ -55,6 +55,16 @@ export interface SiteConfig extends Metadata {
   contact: Contact;
 };
 
+interface Post {
+  title: string;
+  slug: { current: string };
+  publishedAt: string;
+  excerpt: string;
+  body: any;
+  tags: Array<Tag>;
+  _id: string;
+  headings?: Array<HTMLHeadElement | string>;
+}
 
 
 type MarketingConfig = {
