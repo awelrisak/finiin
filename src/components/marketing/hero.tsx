@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <div className="relative py-6">
       <Spotlight
-        className="-top-40 left-0 md:-top-20 md:left-60 fill-white dark:fill-orange-900"
+        className="-top-40 left-0 fill-white dark:fill-orange-900 md:-top-20 md:left-60"
         // fill="white"
       />
 
