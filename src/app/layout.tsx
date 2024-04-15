@@ -5,11 +5,12 @@ import { fontHeading, inter, lora } from "@/app/ui/fonts";
 import { siteConfig } from "@/config/site";
 // import { Analytics } from "@vercel/analytics/react";
 // import { SpeedInsights } from "@vercel/speed-insights/next";
-// import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/sonner";
 import { TailwindIndicator } from "@/components/shared/tailwind-indicator";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { cn } from "@/lib/utils";
 import type { Metadata, Viewport } from "next";
+
 
 export const metadata: Metadata = {
   applicationName: siteConfig.name,
@@ -89,10 +90,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           "min-h-screen bg-background font-sans antialiased",
           inter.variable,
           fontHeading.variable,
-          lora.variable
+          lora.variable,
         )}
       >
-        <main className="relative w-full min-h-full-dvh">
+        <main className="min-h-full-dvh relative w-full">
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
@@ -103,7 +104,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </ThemeProvider>
 
           <NextTopLoader
-            color="blue"
+            color="currentColor"
             initialPosition={0.08}
             crawlSpeed={200}
             height={3}
@@ -117,7 +118,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             zIndex={1600}
             showAtBottom={false}
           />
-          {/* <Toaster position="top-center" richColors /> */}
+          <Toaster position="top-center" richColors />
           <TailwindIndicator />
           {/* <Analytics /> */}
           {/* <SpeedInsights /> */}

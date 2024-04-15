@@ -8,11 +8,12 @@ import {
   CreditCard,
   File,
   FileText,
+  Headphones,
   HelpCircle,
   Image,
   Laptop,
   Loader2,
-  LucideProps,
+  Menu,
   Moon,
   MoreVertical,
   Pizza,
@@ -22,17 +23,19 @@ import {
   Trash,
   User,
   X,
-  Menu,
   type LucideIcon
 } from "lucide-react";
 
 import {
+  IoLocation,
   IoLogoFacebook,
   IoLogoInstagram,
   IoLogoTwitter,
   IoLogoWhatsapp,
-  IoMail
+  IoMail,
 } from "react-icons/io5";
+
+import { PiSmiley } from "react-icons/pi";
 
 export type Icon = LucideIcon;
 
@@ -64,5 +67,9 @@ export const Icons = {
   whatsapp: IoLogoWhatsapp,
   mail: IoMail,
   check: Check,
-  menu: Menu
+  menu: Menu,
+  smiley: PiSmiley,
+  headphones: Headphones,
+  location: IoLocation,
+
 };

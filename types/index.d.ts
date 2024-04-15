@@ -65,4 +65,21 @@ type MarketingConfig = {
   };
 };
 
+type ContactFormValues = {
+  first_name: string;
+  last_name: string;
+  email: string;
+  job_title: string;
+  company_name: string;
+  help: "Evaluate Bird for my company" | "Learn More" | "Get a Quote" | "Other";
+  services:
+    | "Mobile App Develoment"
+    | "Social Media Marketing"
+    | "UI/UX Design"
+    | "Branding"
+    | "Website Development";
+  info: string;
+  terms: boolean;
+};
+
 
