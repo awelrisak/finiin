@@ -37,8 +37,8 @@ export const post = {
     {
       name: "author",
       title: "Author",
-      type: "reference",
-      to: { type: "author" },
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "author" }] }],
       required: true,
     },
     {
