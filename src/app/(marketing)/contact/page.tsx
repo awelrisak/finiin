@@ -21,28 +21,28 @@ export default function Page() {
             <div className="space-y-7">
               <div className="space-y-3">
                 <Icons.headphones />
-                <h3>1-001-234-5678</h3>
+                <h3>+254 722 357 064</h3>
                 <span className="text-sm text-muted-foreground">
                   Call us: Mon - Fri 9:00 - 19:00
                 </span>
               </div>
               <div className="space-y-3">
                 <Icons.location className="size-6" />
-                <h3>New York</h3>
+                <h3>Nairobi</h3>
                 <span className="text-sm text-muted-foreground">
-                  990 Madison Ave, Midtown Manhattan, 2th Floor, NY 10022
+                  Juja rd, Midtown Manhattan, 2th Floor, NY 10022
                 </span>
               </div>
               <div className="space-y-3">
                 <Icons.help />
-                <h3>info@dream-theme.com</h3>
+                <h3>sonamaxmarketing@gmail.com</h3>
                 <span className="text-sm text-muted-foreground">
                   Drop us a line anytime!
                 </span>
               </div>
               <div className="space-y-3">
                 <Icons.user />
-                <h3>hr@dream-theme.com</h3>
+                <h3>sonamaxmarketing@gmail.com</h3>
                 <span className="text-sm text-muted-foreground">
                   Career at Seven Creative
                 </span>
