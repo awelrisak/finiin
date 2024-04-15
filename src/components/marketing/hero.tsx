@@ -7,11 +7,11 @@ export default function Hero() {
   return (
     <div className="relative py-6">
       <Spotlight
-        className="-top-40 left-0 md:-top-20 md:left-60"
-        fill="white"
+        className="-top-40 left-0 md:-top-20 md:left-60 fill-white dark:fill-orange-900"
+        // fill="white"
       />
 
-      <h1 className="text-balance bg-gradient-to-b from-neutral-950 to-neutral-300 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:from-neutral-50 dark:to-neutral-700 md:text-7xl">
+      <h1 className="text-balance bg-gradient-to-b from-neutral-950 to-neutral-500 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:from-neutral-50 dark:to-neutral-700 md:text-7xl">
         Create, grow, and <br /> scale your business
       </h1>
 
