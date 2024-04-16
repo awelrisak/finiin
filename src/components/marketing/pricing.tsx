@@ -57,7 +57,7 @@ function Price({ price }: PriceProps) {
 
         <ul role="list" className="mb-8 space-y-4 text-left">
           {price.features.map((feature) => (
-            <li className="flex items-center space-x-3">
+            <li className="flex items-center space-x-3" key={feature}>
              
               <Icons.check />
               <span>{feature}</span>
