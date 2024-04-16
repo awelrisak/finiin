@@ -34,8 +34,8 @@ const SliderOne = ({ slides }: SliderProps) => {
   return (
     <div>
       <SlickSlider {...settings}>
-        {slides.map((slide) => (
-          <div className="rounded-md px-2 md:p-10">
+        {slides.map((slide, index) => (
+          <div className="rounded-md px-2 md:p-10" key={index}>
             <Image
               priority
               src={slide}
