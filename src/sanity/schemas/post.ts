@@ -48,7 +48,7 @@ export const post = {
       required: true,
       fieldset: "seo",
       description: "A brief summary to catch attention, around 150-160 characters.",
-      validation: (Rule: Rule) => Rule.Rule.max(160).warning("Shorter Excerpts are always better for SEO."),
+      validation: (Rule: Rule) => Rule.max(160).warning("Shorter Excerpts are always better for SEO."),
     },
     {
       name: "keywords",
@@ -57,6 +57,14 @@ export const post = {
       fieldset: "seo",
       description: "Words that relate to your content, helping people find it when they search online.",
     },
+    {
+      name: "coverImage",
+      title: "Cover Image",
+      type: "image",
+      fieldset: "seo",
+      description: "Choose a compelling image that represents your content well and grabs attention.",
+      fields: [{ type: "caption", name: "alt", title: "Caption" }, { type: "text", name: "alt", title: "Alt" }],
+      },
     {
       name: "author",
       title: "Author",
@@ -79,7 +87,7 @@ export const post = {
         { type: "block" },
         {
           type: "image",
-          fields: [{ type: "text", name: "alt", title: "Alt" }],
+          fields: [{ type: "caption", name: "alt", title: "Caption" }, { type: "text", name: "alt", title: "Alt" }],
         },
       ],
       required: true,
