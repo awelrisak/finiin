@@ -87,7 +87,7 @@ export const post = {
         { type: "block" },
         {
           type: "image",
-          fields: [{ type: "caption", name: "alt", title: "Caption" }, { type: "text", name: "alt", title: "Alt" }],
+          fields: [{ type: "text", name: "caption", title: "Caption" }, { type: "text", name: "alt", title: "Alt" }],
         },
       ],
       required: true,
