@@ -16,23 +16,46 @@ export const post = {
   name: "post",
   title: "Post",
   type: "document",
-
+  fieldsets: [
+    {name: 'seo', title: 'SEO metadata'}
+  ],
   fields: [
     {
       name: "title",
       title: "Title",
       type: "string",
-      validation: (Rule: Rule) => Rule.required().error("Required"),
+      description: "Make it clear, grab attention, and mention your topic ( make it 50 - 60 characters)",
+      required: true,
+      fieldset: "seo",
+      validation: (Rule: Rule) => Rule.max(60).warning("Shorter titles are always better for SEO."),
     },
     {
       name: "slug",
       title: "Slug",
       type: "slug",
+      fieldset: "seo",
+      description: "This is the URL of the blog.",
       options: {
         source: "title",
         slugify: (input: string) => customSlugify(input),
       },
-      validation: (Rule: Rule) => Rule.required().error("Required"),
+      validation: (Rule: Rule) => Rule.required().error("Slug is required."),
+    },
+    {
+      name: "excerpt",
+      title: "Description / Excerpt",
+      type: "text",
+      required: true,
+      fieldset: "seo",
+      description: "A brief summary to catch attention, around 150-160 characters.",
+      validation: (Rule: Rule) => Rule.Rule.max(160).warning("Shorter Excerpts are always better for SEO."),
+    },
+    {
+      name: "keywords",
+      title: "Keywords",
+      type: "text",
+      fieldset: "seo",
+      description: "Words that relate to your content, helping people find it when they search online.",
     },
     {
       name: "author",
@@ -47,13 +70,6 @@ export const post = {
       type: "datetime",
       initialValue: () => new Date().toISOString(),
       required: true,
-    },
-    {
-      name: "excerpt",
-      title: "Excerpt",
-      type: "text",
-      required: true,
-      validation: (Rule: Rule) => Rule.max(200).error("Max 200 characters"),
     },
     {
       name: "body",
@@ -72,6 +88,7 @@ export const post = {
       name: "tags",
       title: "Tags",
       type: "array",
+      description: "Keywords related to your post to categorize and improve searchability.",
       of: [{ type: "reference", to: [{ type: "tag" }] }],
     },
   ],
