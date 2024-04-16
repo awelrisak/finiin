@@ -26,10 +26,9 @@ export const author = {
       },
     },
     {
-      name: "bio",
-      title: "Bio",
+      name: "twitter",
+      title: "Twitter",
       type: "text",
-     
     },
   ],
   preview: {
