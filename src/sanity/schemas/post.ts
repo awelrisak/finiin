@@ -63,7 +63,7 @@ export const post = {
       type: "image",
       fieldset: "seo",
       description: "Choose a compelling image that represents your content well and grabs attention.",
-      fields: [{ type: "caption", name: "alt", title: "Caption" }, { type: "text", name: "alt", title: "Alt" }],
+      fields: [{ type: "text", name: "caption", title: "Caption" }, { type: "text", name: "alt", title: "Alt" }],
       },
     {
       name: "author",
