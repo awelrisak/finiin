@@ -1,13 +1,17 @@
 "use client";
 
-import Slider from "react-slick";
+import SlickSlider from "react-slick";
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const SliderOne = () => {
+interface SliderProps {
+  slides: string[];
+}
+
+const SliderOne = ({ slides }: SliderProps) => {
   const isMediumScreen = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
   const isSmallScreen = useMediaQuery({ maxWidth: 767 });
 
@@ -29,82 +33,20 @@ const SliderOne = () => {
 
   return (
     <div>
-      <Slider {...settings}>
-        <>
+      <SlickSlider {...settings}>
+        {slides.map((slide) => (
           <div className="rounded-md px-2 md:p-10">
             <Image
               priority
-              src="/images/business.jpeg"
+              src={slide}
               alt="logo"
               width={500}
               height={500}
-              className="
-                  rounded-2xl
-                      "
+              className="rounded-2xl"
             />
           </div>
-        </>
-
-        <>
-          <div className="rounded-md px-2 md:p-10">
-            <Image
-              priority
-              src="/images/coffe.jpeg"
-              alt="logo"
-              width={500}
-              height={500}
-              className="
-                  rounded-2xl 
-                      "
-            />
-          </div>
-        </>
-
-        <>
-          <div className="rounded-md px-2 md:p-10">
-            <Image
-              priority
-              src="/images/small-business-3.webp"
-              alt="logo"
-              width={500}
-              height={500}
-              className="
-                  rounded-2xl 
-                      "
-            />
-          </div>
-        </>
-
-        <>
-          <div className="rounded-md px-2 md:p-10">
-            <Image
-              priority
-              src="/images/man.jpeg"
-              alt="logo"
-              width={500}
-              height={500}
-              className="
-                  rounded-2xl 
-                      "
-            />
-          </div>
-        </>
-
-        <>
-          <div className="rounded-md px-2 md:p-10">
-            <Image
-              priority
-              src="/images/image-business.jpeg"
-              alt="logo"
-              width={500}
-              height={500}
-              className="
-                  rounded-2xl 
-                      "
-            />
-          </div>
-        </>
-      </Slider>
+        ))}
+      </SlickSlider>
     </div>
   );
 };

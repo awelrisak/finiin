@@ -55,15 +55,51 @@ export interface SiteConfig extends Metadata {
   contact: Contact;
 };
 
+interface Service {
+  icon: any;
+  title: string;
+  description: string;
+}
+
+interface Testimony {
+  quote: string;
+  title: string;
+  name: string;
+}
+
+interface Price {
+  title: string;
+  description: string;
+  price: number;
+  currency: string;
+  features: string[];
+  super?: boolean;
+}
+
+interface Person {
+  id: number;
+  name: string;
+  designation: string;
+  twitter?: string;
+  image: string;
+}
+
 interface Post {
   title: string;
-  slug: { current: string };
+  slug: string;
   publishedAt: string;
   excerpt: string;
   body: any;
   tags: Array<Tag>;
   _id: string;
   headings?: Array<HTMLHeadElement | string>;
+  coverImage: any;
+  author: {
+    name: string;
+    twitter: string;
+  }[];
+  plainText: string;
+  keywords: string[]
 }
 
 

@@ -30,7 +30,7 @@ export const marketingConfig: MarketingConfig = {
     },
     {
       title: "Pricing",
-      href: "/pricing",
+      href: "/#pricing",
     },
   ],
   footer: {
@@ -69,6 +69,14 @@ export const marketingConfig: MarketingConfig = {
         title: "Services",
         links: [
           {
+            name: "Digital marketing",
+            href: "/#services",
+          },
+          {
+            name: "Graphic design",
+            href: "/#services",
+          },
+          {
             name: "Website development",
             href: "/#services",
           },
@@ -76,7 +84,7 @@ export const marketingConfig: MarketingConfig = {
             name: "Website design",
             href: "/#services",
           },
-          
+
           {
             name: "App Development",
             href: "/#services",
@@ -95,15 +103,6 @@ export const marketingConfig: MarketingConfig = {
           },
           {
             name: "Authentication",
-            href: "/#services",
-          },
-          
-          {
-            name: "Graphic design",
-            href: "/#services",
-          },
-          {
-            name: "Digital marketing",
             href: "/#services",
           },
         ],

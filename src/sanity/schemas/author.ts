@@ -27,8 +27,8 @@ export const author = {
     },
     {
       name: "twitter",
-      title: "Twitter",
-      type: "text",
+      title: "Twitter username",
+      type: "string",
     },
   ],
   preview: {

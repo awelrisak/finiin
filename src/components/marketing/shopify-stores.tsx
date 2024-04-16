@@ -2,40 +2,33 @@
 
 import Image from "next/image";
 
-const stores = [
-  {
-    image: "/images/image2.png",
-    quote: "Sonmax showed us to get started, what to do, and how to do it.",
-    name: "Jason Scer",
-  },
-  {
-    image: "/images/shop-2.jpeg",
-    quote:
-      "We had no idea how to get started, but Sonamax showed us the way. And we were able to create something amazing.",
-    name: "John Prency",
-  },
+interface Store {
+  image: string;
+  quote: string;
+  name: string;
+}
 
-  {
-    image: "/images/s-2.webp",
-    quote:
-      "The team at Sonamax is amazing. They helped us create a stunning store that we are proud of.",
-    name: "Miguel Martinez",
-  },
-];
 
-const ShopifyStores = () => {
+
+interface ShopifyStoresProps {
+  title: string;
+  text: string;
+  stores: Store[];
+}
+
+const ShopifyStores = ({title, text, stores}: ShopifyStoresProps) => {
   return (
     <section
-      className=" mt-10 w-full rounded-3xl bg-[#f6f5f4] md:py-10
-  "
+      className=" mt-10 w-full rounded-3xl bg-primary text-primary-foreground md:py-10"
+      id="shopify-stores"
     >
       <div className=" relative   z-10 mx-auto w-full  p-4 ">
-        <div className="bg-opacity-50 bg-gradient-to-b from-neutral-800 to-neutral-500 bg-clip-text py-10 text-center font-heading text-4xl text-transparent md:pb-8 md:text-7xl">
-          Shopify Stores <br />
-        </div>
+        <h2 className="text-balance bg-opacity-50 bg-gradient-to-b from-neutral-800 to-neutral-500 bg-clip-text py-10 text-center font-heading text-4xl text-transparent md:pb-8 md:text-7xl">
+          {title}
+        </h2>
 
         <p className="mx-auto mt-4 max-w-lg  text-center text-lg font-normal text-muted-foreground">
-          We create stunning Shopify stores that are designed to convert.
+          {text}
         </p>
         <div className="items-center justify-center px-10  md:flex ">
           {stores.map((store, index) => (
@@ -51,10 +44,10 @@ const ShopifyStores = () => {
                   height={400}
                   className="mx-auto rounded-lg"
                 />
-                <p className="mt-4 text-center text-lg font-bold text-neutral-800 ">
+                <p className="mt-4 text-center text-lg font-bold  ">
                   &quot;{store.quote}&quot;
                 </p>
-                <p className="mt-4 text-lg font-bold text-neutral-800">
+                <p className="mt-4 text-lg font-bold ">
                   {" "}
                   - {store.name}
                 </p>

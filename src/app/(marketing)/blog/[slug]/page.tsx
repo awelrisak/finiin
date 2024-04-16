@@ -12,6 +12,8 @@ import { Post } from "types";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/shared/icons";
+import { siteConfig } from "@/config/site";
+import { Metadata } from "next";
 
 interface PageProps {
   params: {
@@ -24,6 +26,7 @@ async function getPost(slug: string) {
   *[_type == "post" && slug.current == "${slug}"][0] {
     title,
     slug,
+    coverImage,
     publishedAt,
     excerpt,
     _id,
@@ -33,12 +36,49 @@ async function getPost(slug: string) {
       _id,
       slug,
       name
-    }
+    },
+    author[]->{
+    name,
+    twitter
+    },
+    "plainText": pt::text(body),
+    "keywords": string::split(keywords, ",")
   }
   `;
 
   const post = await client.fetch(query);
   return post;
+}
+
+export async function generateMetadata({
+  params: { slug },
+}: PageProps): Promise<Metadata> {
+  const post: Post = await getPost(slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      type: "article",
+      locale: "en_US",
+      url: `${siteConfig.url}/post/${slug}`,
+      title: post.title,
+      description: post.excerpt,
+      images: urlForImage(post.coverImage.asset),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [urlForImage(post.coverImage.asset)],
+      creator: post.author[0].twitter,
+    },
+    keywords: post.keywords,
+  };
 }
 
 export const revalidate = 60;
@@ -50,18 +90,51 @@ const page = async ({ params }: PageProps) => {
     notFound();
   }
 
+  const postJsonLd = {
+    "@context": "http://schema.org",
+    "@type": "post",
+    headline: post.title,
+    name: post.title,
+    description: post.excerpt,
+    url: `${siteConfig.url}/post${post.slug}`,
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/logo.png`,
+        width: 600,
+        height: 60,
+      },
+    },
+    author: post.author.map((author) => ({
+      "@type": "Person",
+      name: author.name,
+      url: `http://www.twitter.com${author.twitter}`,
+    })),
+
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    image: urlForImage(post.coverImage.asset),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": siteConfig.url,
+    },
+    keywords: post.keywords,
+    articleBody: post.plainText,
+  };
+
   return (
     <article className="container relative max-w-3xl py-6 lg:py-10">
-      {/* <pre>
-       
-        {JSON.stringify(post.headings, null, 2)}
-      </pre> */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd) }}
+      />
       <div className="absolute left-[-200px]  flex-col xl:inline-flex">
-        <Link href="/blog" className={buttonVariants({ variant: "ghost" })}>
+        <Link href="/post" className={buttonVariants({ variant: "ghost" })}>
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
           See all posts
         </Link>
-        {/* {(post?.headings && post.headings.length >= 0) && "hello"} */}
       </div>
 
       <div>
@@ -72,44 +145,37 @@ const page = async ({ params }: PageProps) => {
         <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
           {post.title}
         </h1>
-        {/* {authors?.length ? (
+        {post.author.length && (
           <div className="mt-4 flex space-x-4">
-            {authors.map((author) =>
-              author ? (
-                <Link
-                  key={author._id}
-                  href={`https://twitter.com/${author.twitter}`}
-                  className="flex items-center space-x-2 text-sm"
-                >
-                  <Image
-                    src={author.avatar}
-                    alt={author.title}
-                    width={42}
-                    height={42}
-                    className="rounded-full bg-white"
-                  />
-                  <div className="flex-1 text-left leading-tight">
-                    <p className="font-medium">{author.title}</p>
-                    <p className="text-[12px] text-muted-foreground">
-                      @{author.twitter}
-                    </p>
-                  </div>
-                </Link>
-              ) : null,
-            )}
+            {post.author.map((author, index) => (
+              <Link
+                key={index + author.name}
+                href={`https://twitter.com/${author.twitter}`}
+                className="flex items-center space-x-2 text-sm"
+                target="_blank"
+              >
+                <div className="flex-1 text-left leading-tight">
+                  <p className="font-medium">{author.name}</p>
+                  <p className="text-[12px] text-muted-foreground">
+                    @{author.twitter}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
-        ) : null} */}
+        )}
       </div>
-      {/* {post.image && (
-        <Image
-          src={post.image}
-          alt={post.title}
-          width={720}
-          height={405}
-          className="my-8 rounded-md border bg-muted transition-colors"
-          priority
-        />
-      )} */}
+
+      <Image
+        src={urlForImage(post.coverImage.asset)}
+        alt={post.title}
+        width={720}
+        height={405}
+        className="my-8 rounded-md border bg-muted transition-colors"
+        priority
+      />
+
+      {/* <Toc headings={post?.headings} /> */}
       <div className={richTextStyles}>
         <PortableText
           value={post?.body}
@@ -118,7 +184,7 @@ const page = async ({ params }: PageProps) => {
       </div>
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
-        <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }))}>
+        <Link href="/post" className={cn(buttonVariants({ variant: "ghost" }))}>
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
           See all posts
         </Link>
@@ -229,7 +295,8 @@ prose-headings:my-5
 prose-heading:text-2xl
 prose-p:mb-5
 prose-p:leading-7
-prose-li:list-disc
+prose-ul:list-decimal
+prose-ol:list-disc
 prose-li:leading-7
 prose-li:ml-4
 `;

@@ -1,41 +1,26 @@
 import Image from "next/image";
 
+interface BrandsProps {
+  title: string;
+  text: string;
+  logos: {
+    image: string;
+  }[];
+}
 
-const logos = [
-  {
-    image: "/logo/logoipsum-248.svg",
-  },
-  {
-    image: "/logo/logoipsum-245.svg",
-  },
-  {
-    image: "/logo/logoipsum-225.svg",
-  },
-  {
-    image: "/logo/logoipsum-248.svg",
-  },
-  {
-    image: "/logo/logoipsum-249.svg",
-  },
-  {
-    image: "/logo/stripelogo.png",
-  },
-];
-
-const Brands = () => {
+const Brands = ({ title, text, logos }: BrandsProps) => {
   return (
-    <div>
+    <section id="brands">
       <div className=" relative   z-10 mx-auto w-full  p-4 pt-20 md:pt-32">
-        <div
-          className="bg-opacity-50 bg-gradient-to-b from-purple-500 to-sky-400 dark:to-sky-200 bg-clip-text 
-        text-center font-heading text-4xl text-transparent md:pb-8 md:text-7xl"
+        <h2
+          className="text-balance bg-opacity-50 bg-gradient-to-b from-purple-500 to-sky-400 bg-clip-text text-center 
+        font-heading text-4xl text-transparent dark:to-sky-200 md:pb-8 md:text-7xl"
         >
-          The best brands <br /> choose us
-        </div>
+          {title}
+        </h2>
 
         <p className="mx-auto mt-4 max-w-lg text-center  text-lg font-normal text-muted-foreground">
-          From small businesses to large corporations, we have helped many
-          brands elevate their business.
+          {text}
         </p>
 
         <div className="mx-auto grid  cursor-pointer grid-cols-3  items-center justify-center md:w-3/5">
@@ -53,7 +38,7 @@ const Brands = () => {
           ))}
         </div>
 
-        <div className="font-lora flex items-center justify-center px-8 pb-4 pt-10 text-center text-xl  md:pt-0 xl:text-2xl">
+        <div className="flex items-center justify-center px-8 pb-4 pt-10 text-center font-lora text-xl  md:pt-0 xl:text-2xl">
           &quot;We got rid of nearly a dozen different tools because of what
           Sonamax does for us.&quot;
         </div>
@@ -73,7 +58,7 @@ const Brands = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

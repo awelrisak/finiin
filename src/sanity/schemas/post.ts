@@ -16,18 +16,18 @@ export const post = {
   name: "post",
   title: "Post",
   type: "document",
-  fieldsets: [
-    {name: 'seo', title: 'SEO metadata'}
-  ],
+  fieldsets: [{ name: "seo", title: "SEO metadata" }],
   fields: [
     {
       name: "title",
       title: "Title",
       type: "string",
-      description: "Make it clear, grab attention, and mention your topic ( make it 50 - 60 characters)",
+      description:
+        "Make it clear, grab attention, and mention your topic ( make it 50 - 60 characters)",
       required: true,
       fieldset: "seo",
-      validation: (Rule: Rule) => Rule.max(60).warning("Shorter titles are always better for SEO."),
+      validation: (Rule: Rule) =>
+        Rule.max(60).warning("Shorter titles are always better for SEO."),
     },
     {
       name: "slug",
@@ -47,27 +47,37 @@ export const post = {
       type: "text",
       required: true,
       fieldset: "seo",
-      description: "A brief summary to catch attention, around 150-160 characters.",
-      validation: (Rule: Rule) => Rule.max(160).warning("Shorter Excerpts are always better for SEO."),
+      description:
+        "A brief summary to catch attention, around 150-160 characters.",
+      validation: (Rule: Rule) =>
+        Rule.max(160).warning("Shorter Excerpts are always better for SEO."),
     },
     {
       name: "keywords",
       title: "Keywords",
       type: "text",
       fieldset: "seo",
-      description: "Words that relate to your content, helping people find it when they search online.",
+      description:
+        "Words that relate to your content, helping people find it when they search online. Separate by (,) commas.",
     },
     {
       name: "coverImage",
       title: "Cover Image",
       type: "image",
       fieldset: "seo",
-      description: "Choose a compelling image that represents your content well and grabs attention.",
-      fields: [{ type: "text", name: "caption", title: "Caption" }, { type: "text", name: "alt", title: "Alt" }],
+      description:
+        "Choose a compelling image that represents your content well and grabs attention.",
+      fields: [
+        { type: "text", name: "caption", title: "Caption", rows: 3 },
+        { type: "text", name: "alt", title: "Alt", rows: 2 },
+      ],
+      options: {
+        hotspot: true,
       },
+    },
     {
       name: "author",
-      title: "Author",
+      title: "Author(s)",
       type: "array",
       of: [{ type: "reference", to: [{ type: "author" }] }],
       required: true,
@@ -87,7 +97,10 @@ export const post = {
         { type: "block" },
         {
           type: "image",
-          fields: [{ type: "text", name: "caption", title: "Caption" }, { type: "text", name: "alt", title: "Alt" }],
+          fields: [
+            { type: "text", name: "caption", title: "Caption", rows: 3 },
+            { type: "text", name: "alt", title: "Alt", rows: 2 },
+          ],
         },
       ],
       required: true,
@@ -96,8 +109,16 @@ export const post = {
       name: "tags",
       title: "Tags",
       type: "array",
-      description: "Keywords related to your post to categorize and improve searchability.",
+      description:
+        "Keywords related to your post to categorize and improve searchability.",
       of: [{ type: "reference", to: [{ type: "tag" }] }],
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+      media: "coverImage",
+      subtitle: "slug.current",
+    },
+  },
 };

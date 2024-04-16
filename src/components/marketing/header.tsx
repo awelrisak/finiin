@@ -1,12 +1,10 @@
-import { marketingConfig } from "@/config/marketing";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
 import { Navbar } from "@/components/marketing/navbar";
+import { marketingConfig } from "@/config/marketing";
 import Link from "next/link";
 import { ModeToggle } from "../shared/mode-toggle";
 export default function Header() {
   return (
-    <header className="sticky top-0 container z-40 min-h-18 bg-background/90 backdrop-blur-xl ">
+    <header className="sticky top-0 container z-40 min-h-18 bg-background/95 backdrop-blur-xl ">
       <div className="flex h-20 items-center justify-between py-6">
         <Navbar items={marketingConfig.mainNav} />
         <nav className="hidden md:inline-flex gap-4">

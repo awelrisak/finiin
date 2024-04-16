@@ -1,17 +1,24 @@
 "use client";
 
 import Image from "next/image";
+interface WebsiteDevelopmentProps {
+  title: string;
+  text: string;
+  // services: Service[];
+}
 
-const WebsiteDevelopment = () => {
+const WebsiteDevelopment = ({title, text}: WebsiteDevelopmentProps) => {
   return (
-    <div className="text-white" id="website-development">
-      <div className="relative z-10 mx-auto w-full p-4 px-2 pt-10 md:pt-20">
-        <div className="bg-opacity-50 bg-gradient-to-b  from-purple-500 to-sky-400 dark:to-sky-200 bg-clip-text text-center font-heading text-4xl text-transparent md:text-7xl">
-          Grow Your Business <br /> with Powerful Websites
-        </div>
+    <section
+      id="website-development"
+      className="relative z-10 mx-auto w-full p-4 px-2 pt-20 md:pt-20"
+    >
+      <div>
+        <h2 className="bg-opacity-50 bg-gradient-to-b text-balance from-purple-500 to-sky-400 bg-clip-text text-center font-heading text-4xl text-transparent dark:to-sky-200 md:text-7xl">
+          {title}
+        </h2>
         <p className="mx-auto mt-4 max-w-lg  px-4 text-center text-lg font-normal text-muted-foreground">
-          Creating, designing and developing websites that work for your
-          business.
+         {text}
         </p>
       </div>
 
@@ -145,7 +152,7 @@ const WebsiteDevelopment = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

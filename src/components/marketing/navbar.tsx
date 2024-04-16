@@ -10,6 +10,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { MainNavItem } from "types";
 import { useActiveItem } from "@/hooks/use-active-item";
+import slugify from "slugify";
 
 interface MainNavProps {
   items?: MainNavItem[];
@@ -20,29 +21,17 @@ export function Navbar({ items, children }: MainNavProps) {
   const segment = useSelectedLayoutSegment();
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
 
-  const itemIds = items?.map((item) => item.title) || [];
+  const itemIds = items?.map((item) => slugify(item.title)) || [];
 
-  // const active = useActiveItem(itemIds);
+  const active = useActiveItem(itemIds);
 
   return (
     <div className="flex flex-1 items-center justify-between gap-6 md:gap-10 ">
       <Link href="/" className="flex items-center space-x-2">
         <Icons.logo />
-        {/*<Button
-          variant="outline"
-          className="flex items-center space-x-2 md:hidden"
-          onClick={() => setShowMobileMenu(!showMobileMenu)}
-          size="icon"
-          aria-label="Toggle mobile menu"
-        >
-          {showMobileMenu ? (
-            <Close className="h-[1.2rem] w-[1.2rem]" />
-          ) : (
-            <Menu className="h-[1.2rem] w-[1.2rem]" />
-          )}
-        </Button>*/}
+       
         <span className="font-bold inline-block">
-          {siteConfig.name}
+          {siteConfig.name} {active}
         </span>
       </Link>
       {items?.length ? (
@@ -58,9 +47,9 @@ export function Navbar({ items, children }: MainNavProps) {
                   : "text-foreground/60",
 
                 item.disabled && "cursor-not-allowed opacity-80",
-                // {
-                //   "text-foreground/60": active != item.title,
-                // },
+                {
+                  "text-foreground/60": active != item.title,
+                },
               )}
             >
               {item.title}

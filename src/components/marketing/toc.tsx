@@ -2,8 +2,8 @@ import React from "react";
 import  slugify  from "slugify";
 
 const Toc = ({ headings }: any) => (
-  <div className="mx-auto mt-8 max-w-2xl rounded-sm border text-center dark:border-purple-950 ">
-    <h2 className="bg:amber-50 mb-5 border-b p-2 text-xl font-bold dark:border-purple-950 dark:bg-slate-900/20">
+  <div className="mt-8 max-w-sm rounded-sm border">
+    <h2 className="border-b p-2 text-xl font-bold">
       Table of Contents
     </h2>
     <nav>

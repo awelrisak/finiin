@@ -1,6 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import React from "react";
-import PostCard from "@/components/marketing/post";
+// import PostCard from "@/components/marketing/post";
 import { Post } from "types";
 
 async function getPostsByTag(tag: string) {
@@ -32,14 +32,14 @@ interface Params {
 
 const page = async ({ params }: Params) => {
   const posts: Array<Post> = await getPostsByTag(params.slug);
-  console.log(posts, "posts by tag");
+
   return (
     <div>
 
       <div>
-        {posts?.length > 0 && posts?.map((post) => (
+        {/* {posts?.length > 0 && posts?.map((post) => (
           <PostCard key={post?._id} post={post} />
-        ))}
+        ))} */}
       </div>
     </div>
   );
