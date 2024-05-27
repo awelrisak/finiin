@@ -210,8 +210,8 @@ const page = async ({ params: { slug } }: PageProps) => {
 
       {
        post?.tags.length && (
-         <div className="my-4">
-           <span>Tags:&nbsp;</span>
+         <div className="my-4 space-x-2">
+           <span>Tags:</span>
            {
             post?.tags.map((tag, i) => (
             <Button variant="outline" asChild key={tag._id}>
