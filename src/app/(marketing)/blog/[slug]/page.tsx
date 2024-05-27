@@ -156,10 +156,17 @@ const page = async ({ params: { slug } }: PageProps) => {
         </div>
     <article className="flex-1 container overflow-auto relative max-w-3xl py-6 lg:py-10">
       <div>
-        <span className="block">
-          Published on &nbsp;
-          <Moment format="MMMM Do, YYYY" date={post?.publishedAt} />
-        </span>
+        <div className="space-x-4">
+          <span>Published on &nbsp;</span>
+          <span>
+            <Moment format="MMMM Do, YYYY" date={post.publishedAt} />
+          </span>
+                           
+                         <span>&#x2022;</span>
+                           <span>
+                          {readingTime(post.plainText)}
+                          </span>
+        </div>
         <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
           {post.title}
         </h1>
