@@ -240,8 +240,8 @@ const page = async ({ params: { slug } }: PageProps) => {
                         width={80}
                         className="size-20 rounded-lg"
                       />
-                      <div className="flex-1 flex flex-col justify-center mx-3">
-                        <p className="text-lg sm:text-xl font-bold text-foreground line-clamp-2">
+                      <div className="flex-1 space-y-2 mx-3">
+                        <p className="text-lg sm:text-xl font-bold text-foreground leading-tight">
                           {post.title}
                         </p>
 
@@ -249,8 +249,9 @@ const page = async ({ params: { slug } }: PageProps) => {
                           <p>
                             <Moment format="MMMM Do, YYYY" date={post.publishedAt} />
                           </p>
-                          &#x2022;
-                          {/* <p>
+                           
+                         {/* &#x2022;
+                           <p>
                           {getBlogReadTime(blog)}
                           </p> */}
                         </div>
