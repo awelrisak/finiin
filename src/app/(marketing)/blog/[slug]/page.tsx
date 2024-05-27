@@ -215,7 +215,7 @@ const page = async ({ params: { slug } }: PageProps) => {
            {
             post?.tags.map((tag, i) => (
             <Button variant="outline" asChild key={tag._id}>
-              <Link href={`/blog?tag=${tag.slug}`}>
+              <Link href={`/blog?tag=${tag.name}`}>
                 <span>
                   {tag.name}
                 </span>
