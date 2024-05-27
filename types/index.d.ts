@@ -45,14 +45,10 @@ export interface SiteConfig extends Metadata {
   description: string;
   url: string;
   ogImage: string;
-  // links: {
-  //   twitter: string;
-  //   github: string;
-  // };
   Icon?: Icon;
   links: Link[];
-  address: Address;
-  contact: Contact;
+  address?: Address;
+  contact?: Contact;
 };
 
 interface Service {
