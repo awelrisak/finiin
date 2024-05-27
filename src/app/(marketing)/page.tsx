@@ -66,78 +66,107 @@ const people = [
 
 const prices = [
   {
-    title: "Website development",
-    description: "Best option for personal use & for your next project.",
-    price: 349,
+    title: "Website Development",
+    description: "Comprehensive website development services for businesses and individuals.",
+    price: 1200,
     currency: "$",
     features: [
-      "Individual configuration",
-      "No setup, or hidden fees",
-      "Team size: 1 developer",
-      "Premium support: 6 months",
-      "Free updates: 6 months",
+      "Custom design and development",
+      "Responsive design",
+      "SEO optimization",
+      "Team size: 2 developers",
+      "Premium support: 12 months",
+      "Free updates: 12 months",
     ],
   },
   {
-    title: "Digital marketing",
-    description: "Best option for personal use & for your next project.",
-    price: 799,
+    title: "Digital Marketing",
+    description: "Complete digital marketing solutions to boost your online presence.",
+    price: 1500,
     currency: "$",
     features: [
-      "Individual configuration",
-      "No setup, or hidden fees",
-      "Team size: 1 developer",
+      "Customized marketing strategy",
+      "Social media management",
+      "Search engine optimization (SEO)",
+      "Pay-per-click (PPC) advertising",
+      "Team size: 3 marketers",
+      "Premium support: 12 months",
+      "Monthly performance reports",
+    ],
+  },
+  {
+    title: "Graphic Designing",
+    description: "Professional graphic design services to create stunning visuals for your brand.",
+    price: 600,
+    currency: "$",
+    features: [
+      "Custom graphic design",
+      "Logo and brand identity",
+      "Print and digital media design",
+      "Team size: 2 designers",
       "Premium support: 6 months",
-      "Free updates: 6 months",
+      "Free revisions: up to 3",
+    ],
+  },
+  {
+    title: "Premium",
+    description: "All-in-one package that includes website development, digital marketing, and graphic designing services.",
+    price: 3000,
+    currency: "$",
+    features: [
+      "Custom design and development",
+      "Responsive design",
+      "SEO optimization",
+      "Customized marketing strategy",
+      "Social media management",
+      "Search engine optimization (SEO)",
+      "Pay-per-click (PPC) advertising",
+      "Custom graphic design",
+      "Logo and brand identity",
+      "Print and digital media design",
+      "Team size: 5 specialists (developers, marketers, designers)",
+      "Premium support: 12 months",
+      "Free updates and revisions: 12 months",
+      "Monthly performance reports",
     ],
     super: true,
   },
-  {
-    title: "Graphic designing",
-    description: "Best option for personal use & for your next project.",
-    price: 299,
-    currency: "$",
-    features: [
-      "Individual configuration",
-      "No setup, or hidden fees",
-      "Team size: 1 developer",
-      "Premium support: 6 months",
-      "Free updates: 6 months",
-    ],
-  },
 ];
+
 
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "Finiin transformed our online presence completely. Their digital marketing strategies significantly increased our website traffic and boosted our sales. Their team's dedication and expertise are unparalleled.",
+    name: "John Smith",
+    title: "CEO, Tech Innovations",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
+      "Working with Finiin has been a game-changer for our brand. Their social media management and SEO services have dramatically improved our engagement and search rankings. We couldn't be happier with the results.",
+    name: "Emily Johnson",
+    title: "Marketing Director, Fashion Forward",
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
-  },
-  {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+    quote: 
+      "The team at Finiin is exceptional! Their customized marketing strategies have helped us reach a wider audience and achieve our business goals. Their professionalism and creativity stand out.",
+    name: "Michael Brown",
+    title: "Founder, Healthy Eats",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+      "Finiin's graphic design services have elevated our brand's visual identity. From logo design to promotional materials, their work is consistently top-notch. Highly recommended!",
+    name: "Sarah Davis",
+    title: "Creative Director, Artistry Co.",
+  },
+  {
+    quote:
+      "Choosing Finiin for our digital marketing needs was the best decision we made. Their comprehensive approach and in-depth understanding of the market have driven impressive results for our campaigns.",
+    name: "David Wilson",
+    title: "Owner, Adventure Gear",
   },
 ];
+
 
 const services = [
   {
@@ -226,20 +255,20 @@ const brandLogos = [
 const stores = [
   {
     image: "/images/image2.png",
-    quote: "Sonmax showed us to get started, what to do, and how to do it.",
+    quote: "Finiin showed us to get started, what to do, and how to do it.",
     name: "Jason Scer",
   },
   {
     image: "/images/shop-2.jpeg",
     quote:
-      "We had no idea how to get started, but Sonamax showed us the way. And we were able to create something amazing.",
+      "We had no idea how to get started, but Finiin showed us the way. And we were able to create something amazing.",
     name: "John Prency",
   },
 
   {
     image: "/images/s-2.webp",
     quote:
-      "The team at Sonamax is amazing. They helped us create a stunning store that we are proud of.",
+      "The team at Finiin is amazing. They helped us create a stunning store that we are proud of.",
     name: "Miguel Martinez",
   },
 ];
