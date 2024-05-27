@@ -212,7 +212,8 @@ const page = async ({ params: { slug } }: PageProps) => {
        post?.tags.length && (
          <div className="my-4">
            <span>Tags:&nbsp;</span>
-           post?.tags.map((tag, i) => (
+           {
+            post?.tags.map((tag, i) => (
             <Button variant="link" asChild key={tag._id}>
               <Link href={`/blog?tag=${tag.slug}`}>
                 <span>
@@ -221,7 +222,7 @@ const page = async ({ params: { slug } }: PageProps) => {
                </Link>
             </Button>
             
-           ))
+           ))}
          </div>
        )
       }
