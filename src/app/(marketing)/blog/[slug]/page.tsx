@@ -211,9 +211,9 @@ const page = async ({ params: { slug } }: PageProps) => {
         <div className="lg:h-full-dvh lg:overflow-auto max-w-2xl w-fit md:sticky md:top-0 relative px-6">
           <section className="lg:max-w-xs">
             <div className="flex items-baseline justify-between mb-3">
-              <h2 className="text-lg md:font-bold md:text-3xl">Recent Posts</h2>
+              <h2 className="text-lg font-semibold md:text-2xl">Recent Posts</h2>
 
-              <Link href="/blog" className={cn(buttonVariants({ variant: 'ghost' }), "text-sm")}>
+              <Link href="/blog" className={cn(buttonVariants({ variant: 'ghost' }), "font-light")}>
                 See more
                 <span aria-hidden="true" className="ml-2">
                   &rarr;
