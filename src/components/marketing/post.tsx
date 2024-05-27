@@ -25,7 +25,7 @@ const Post = ({ post, }: Props) => {
 
       <h2 className="text-2xl font-extrabold">{post.title}</h2>
 
-      <p className="text-muted-foreground line-clamp-3">{post.excerpt}</p>
+      <p className="text-muted-foreground">{post.excerpt}</p>
 
       <Moment
         date={post.publishedAt}
