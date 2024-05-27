@@ -153,13 +153,6 @@ const page = async ({ params: { slug } }: PageProps) => {
           </Link>
         </div>
     <article className="flex-1 container overflow-auto relative max-w-3xl py-6 lg:py-10">
-      <div className="absolute left-[-200px]  flex-col xl:inline-flex">
-        <Link href="/blog" className={buttonVariants({ variant: "ghost" })}>
-          <Icons.chevronLeft className="mr-2 h-4 w-4" />
-          See all posts
-        </Link>
-      </div>
-
       <div>
         <span className="block">
           Published on &nbsp;
