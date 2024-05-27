@@ -44,7 +44,7 @@ function Price({ price }: PriceProps) {
   const Wrapper = price.super ? BackgroundGradient : "div";
 
   return (
-    <Wrapper className="mx-auto flex max-w-lg flex-col rounded-3xl border bg-card p-6 text-center text-card-foreground shadow xl:p-8">
+    <Wrapper className="mx-auto flex max-w-lg flex-col rounded-3xl border bg-card p-6 text-center text-card-foreground shadow xl:p-8" animate>
       <div>
         <h3 className="mb-4 text-2xl font-semibold">{price.title}</h3>
         <p className="font-light text-muted-foreground sm:text-lg">
