@@ -156,14 +156,14 @@ const page = async ({ params: { slug } }: PageProps) => {
         </div>
     <article className="flex-1 container overflow-auto relative max-w-3xl py-6 lg:py-10">
       <div>
-        <div>
-          <span className="text-muted-foreground">Published on</span> &nbsp;
+        <div className="text-muted-foreground">
+          <span>Published on</span> &nbsp;
           <span>
             <Moment format="MMMM Do, YYYY" date={post.publishedAt} />
           </span>
        &nbsp;
                            
-                         <span className="text-muted-foreground">&#x2022;</span>
+                         <span>&#x2022;</span>
        &nbsp;
                            <span>
                           {readingTime(post?.plainText || "").text}
