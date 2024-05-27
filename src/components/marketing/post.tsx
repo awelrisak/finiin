@@ -35,7 +35,7 @@ const Post = ({ post, }: Props) => {
                            
                          <span>&#x2022;</span>
                            <span>
-                          {readingTime(post.plainText).text}
+                          {readingTime(post.plainText || "").text}
                           </span>
                         </div>
 
