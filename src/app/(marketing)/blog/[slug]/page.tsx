@@ -184,7 +184,7 @@ const page = async ({ params }: PageProps) => {
       </div>
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
-        <Link href="/post" className={cn(buttonVariants({ variant: "ghost" }))}>
+        <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }))}>
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
           See all posts
         </Link>
@@ -220,7 +220,7 @@ const portableTextComponents: PortableTextComponents = {
     h2: ({ children, value }: any) => (
       <h2
         id={slugify(toPlainText(value))}
-        className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0"
+        className="mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0"
       >
         {children}
       </h2>
@@ -236,7 +236,7 @@ const portableTextComponents: PortableTextComponents = {
     h4: ({ children, value  }: any) => (
       <h4
         id={slugify(toPlainText(value))}
-        className="scroll-m-20 text-xl font-semibold tracking-tight"
+        className="mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
       >
         {children}
       </h4>
@@ -244,7 +244,7 @@ const portableTextComponents: PortableTextComponents = {
     h5: ({ children, value }: any) => (
       <h5
         id={slugify(toPlainText(value))}
-        className="mb-3 text-2xl font-bold"
+        className="mt-8 scroll-m-20 text-lg font-semibold tracking-tight"
       >
         {children}
       </h5>
@@ -252,7 +252,7 @@ const portableTextComponents: PortableTextComponents = {
     h6: ({ children, value }: any) => (
       <h6
         id={slugify(toPlainText(value))}
-        className="mb-3 text-xl font-bold"
+        className="mt-8 scroll-m-20 text-base font-semibold tracking-tight"
       >
         { children }
       </h6>
