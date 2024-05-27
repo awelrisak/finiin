@@ -131,7 +131,7 @@ const page = async ({ params }: PageProps) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd) }}
       />
       <div className="absolute left-[-200px]  flex-col xl:inline-flex">
-        <Link href="/post" className={buttonVariants({ variant: "ghost" })}>
+        <Link href="/blog" className={buttonVariants({ variant: "ghost" })}>
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
           See all posts
         </Link>
@@ -176,7 +176,7 @@ const page = async ({ params }: PageProps) => {
       />
 
       {/* <Toc headings={post?.headings} /> */}
-      <div>
+      <div className="overflow-auto">
         <PortableText
           value={post?.body}
           components={portableTextComponents}
