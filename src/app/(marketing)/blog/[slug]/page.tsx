@@ -216,7 +216,7 @@ const page = async ({ params: { slug } }: PageProps) => {
     {
      recentPosts && (
       <div className="lg:h-full-dvh lg:overflow-auto max-w-2xl w-fit md:sticky md:top-0 relative px-6">
-       <section className={cn(rootClass)}>
+       <section className="lg:max-w-xs">
       <div className="flex items-center justify-between mb-3">       
           <h2 className={"text-lg font-bold md:text-3xl"}>
               Recent Posts
@@ -274,6 +274,7 @@ const page = async ({ params: { slug } }: PageProps) => {
     </div>
      )
     }
+    </div>
   );
 };
 
