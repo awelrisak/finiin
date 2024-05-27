@@ -140,7 +140,7 @@ const page = async ({ params: { slug } }: PageProps) => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd) }}
          />
-        <div className="flex flex-col md:sticky md:top-0 ">
+        <div className="flex flex-col md:sticky md:top-20 ">
           <Link
             href="/blog"
             className={cn(
@@ -211,7 +211,7 @@ const page = async ({ params: { slug } }: PageProps) => {
         <div className="lg:h-full-dvh lg:overflow-auto max-w-2xl w-fit md:sticky md:top-0 relative px-6">
           <section className="lg:max-w-xs">
             <div className="flex items-center justify-between mb-3">
-              <h2 className="text-lg font-bold md:text-3xl">Recent Posts</h2>
+              <h2 className="text-lg md:font-bold md:text-3xl">Recent Posts</h2>
 
               <Link href="/blog" className={buttonVariants({ variant: 'ghost' })}>
                 See more
@@ -234,7 +234,7 @@ const page = async ({ params: { slug } }: PageProps) => {
                         className="size-20 rounded-lg"
                       />
                       <div className="flex-1 space-y-2 mx-3">
-                        <h3 className="sm:text-lg font-semibold leading-tight">
+                        <h3 className="md:text-lg font-semibold leading-tight">
                           {post.title}
                         </h3>
 
