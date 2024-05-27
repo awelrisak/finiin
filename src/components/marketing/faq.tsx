@@ -7,66 +7,61 @@ import {
 
 const faq = [
   {
-    question: "What is Sonamax?",
+    question: "What is Finiin?",
     answer:
-      "Sonamax is a full-fledged marketing agency that specializes in branding, web design, and digital marketing.",
+      "Finiin is a comprehensive digital marketing agency specializing in branding, web design, SEO, social media management, and graphic design.",
   },
   {
-    question: "How to start?",
+    question: "How do I get started?",
     answer:
-      "You can start by contacting us. We will get back to you within 24 hours.",
+      "You can start by contacting us through our website or email. We will respond within 24 hours to discuss your project and requirements.",
   },
   {
-    question: "Pricing?",
+    question: "What are your pricing options?",
     answer:
-      "We offer custom-tailored solutions for your business. Contact us to get a quote.",
+      "We offer custom-tailored solutions based on your specific business needs. Contact us for a personalized quote.",
   },
   {
-    question: "What is the turnaround time?",
+    question: "What is the typical turnaround time?",
     answer:
-      "We usually deliver the first draft within 1 week. The final website is delivered within 2 weeks.",
+      "The initial draft is usually delivered within 1 week. Final delivery times depend on the project's scope but typically range from 2 to 4 weeks.",
   },
   {
-    question: "How do you communicate?",
+    question: "How do you communicate with clients?",
     answer:
-      "We use email, Slack, WhatsApp and Signal to communicate. We strongly prefer Slack and keep the conversations async so that we can focus on building your website.",
+      "We use email, Slack, and WhatsApp for communication. We prefer Slack for ongoing project updates and feedback to ensure efficient and asynchronous communication.",
   },
   {
-    question: "What is the process of working with you?",
+    question: "What is your process for working with clients?",
     answer:
-      "Our process involves adding you to a communication channel where you describe your requirements (a call is optional). We then dive deep into your project which involves research, ideation and iterations -- all this with working closely with you for instant feedback.",
+      "Our process involves an initial consultation to understand your requirements, followed by a deep dive into your project. This includes research, ideation, and iterations, with continuous feedback from you to ensure the best results.",
   },
   {
-    question: "What happens if I don't like the design?",
+    question: "What if I don't like the design?",
     answer:
-      "We provide unlimited revisions until you are happy with the design. We will work with you to make sure you are happy with the design.",
+      "We offer unlimited revisions until you are satisfied with the design. Our goal is to ensure you are completely happy with the final outcome.",
   },
   {
-    question: "Are there any refunds?",
+    question: "Do you offer refunds?",
     answer:
-      "We provide refunds only if we haven't started working on your website. Once we start working on your website, we don't provide any refunds.",
+      "We provide refunds only if we haven't started working on your project. Once the work has begun, we do not offer refunds.",
   },
   {
-    question: "What is your Tech Stack?",
+    question: "What technologies do you use?",
     answer:
-      "We are comfortable with all the major frameworks and technologies there are (since we are engineers). But yes, we have our favourites. We use Next.js and Tailwind CSS to build out your website. Next because it has SEO benefits, Tailwind because it makes us fast.",
+      "We specialize in various digital marketing tools and platforms. For web development, we use technologies like Next.js and Tailwind CSS for their speed and SEO benefits.",
   },
   {
-    question: "Why no calls or meetings?",
+    question: "Why do you prefer asynchronous communication?",
     answer:
-      "We are a small team and we want to focus on building your website. We have found that calls and meetings are a huge distraction and we want to avoid them as much as possible. We prefer async communication over calls and meetings. In the past, We've built huge softwares and SaaS applications without ever getting on a call. We are confident that we can build your website without getting on a call.",
+      "As a focused team, we find that calls and meetings can be distracting. Asynchronous communication allows us to concentrate on delivering high-quality work while still providing timely updates and feedback.",
   },
-  // {
-  //   question:
-  //     "What happens if I have to make some changes in the website after it is delivered?",
-  //   answer:
-  //     "We provide you with a video tutorial on how to make changes to your website. If you still need help, we can make changes for you at an hourly rate OR you can sign up for our retainer services. Contact us on the website chat for more details.",
-  // },
   {
-    question: "Support?",
-    answer: "We offer Monday-Friday support for all our clients.",
+    question: "What kind of support do you offer?",
+    answer: "We offer support Monday through Friday for all our clients. You can reach us via email or our communication channels for any assistance.",
   },
 ];
+
 
 const FAQS = () => {
   return (
