@@ -13,7 +13,7 @@ const Post = ({ post, }: Props) => {
   return (
     <article key={post._id} className="group relative flex flex-col space-y-2">
       <Image
-        src={urlForImage(post.coverImage.asset)}
+        src={post.coverImage}
         alt="Post cover image"
         width={804}
         height={452}
