@@ -22,7 +22,7 @@ async function getPostsByTag(tag: string) {
   return posts;
 }
 
-export const revalidate = 60;
+export const revalidate = 5;
 
 interface Params {
   params: {
