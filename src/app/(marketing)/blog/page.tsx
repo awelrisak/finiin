@@ -22,7 +22,8 @@ async function getPosts(index?: number) {
       _id,
       slug,
       name
-    }
+    },
+   "plainText": pt::text(body),
   }
   `;
 
