@@ -176,7 +176,7 @@ const page = async ({ params }: PageProps) => {
       />
 
       {/* <Toc headings={post?.headings} /> */}
-      <div className="overflow-auto">
+      <div className="snap-both">
         <PortableText
           value={post?.body}
           components={portableTextComponents}
