@@ -40,7 +40,8 @@ async function getData(slug: string) {
     },
     author[]->{
     name,
-    twitter
+    twitter,
+    "image": image.asset->url
     },
     "plainText": pt::text(body),
     "keywords": string::split(keywords, ",")
@@ -170,6 +171,13 @@ const page = async ({ params: { slug } }: PageProps) => {
                 className="flex items-center space-x-2 text-sm"
                 target="_blank"
               >
+                <Image
+                    src={author.image}
+                    alt={author.name}
+                    width={42}
+                    height={42}
+                    className="rounded-full bg-white"
+                  />
                 <div className="flex-1 text-left leading-tight">
                   <p className="font-medium">{author.name}</p>
                   <p className="text-[12px] text-muted-foreground">
