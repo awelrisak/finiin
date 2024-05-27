@@ -9,7 +9,7 @@ import {structureTool} from 'sanity/structure'
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import {apiVersion, dataset, projectId} from '@/sanity/env'
 import {schema} from '@/sanity/schema'
-import { Icons } from '@/components/shared/icons'
+import { siteConfig } from "@/config/site";
 
 export default defineConfig({
   basePath: '/studio',
@@ -17,12 +17,12 @@ export default defineConfig({
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
-  name: "Sonamax",
-  icon: Icons.logo,
+  name: siteConfig.name,
+  icon: siteConfig.icon,
   plugins: [
     structureTool(),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
-    visionTool({defaultApiVersion: apiVersion}),
+    //visionTool({defaultApiVersion: apiVersion}),
   ],
 })
