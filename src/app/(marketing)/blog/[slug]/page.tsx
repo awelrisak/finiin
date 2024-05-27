@@ -136,6 +136,10 @@ const page = async ({ params: { slug } }: PageProps) => {
 
   return (
     <div className="pt-1 pb-6 flex flex-col lg:flex-row gap-4 md:gap-6">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd) }}
+         />
         <div className="flex flex-col md:sticky md:top-0 ">
           <Link
             href="/blog"
@@ -148,11 +152,7 @@ const page = async ({ params: { slug } }: PageProps) => {
             See all blogs
           </Link>
         </div>
-    <article className="container relative max-w-3xl py-6 lg:py-10">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd) }}
-      />
+    <article className="flex-1 container relative max-w-3xl py-6 lg:py-10">
       <div className="absolute left-[-200px]  flex-col xl:inline-flex">
         <Link href="/blog" className={buttonVariants({ variant: "ghost" })}>
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
@@ -213,67 +213,7 @@ const page = async ({ params: { slug } }: PageProps) => {
         </Link>
       </div>
     </article>
-    {
-     recentPosts && (
-      <div className="lg:h-full-dvh lg:overflow-auto max-w-2xl w-fit md:sticky md:top-0 relative px-6">
-       <section className="lg:max-w-xs">
-      <div className="flex items-center justify-between mb-3">       
-          <h2 className={"text-lg font-bold md:text-3xl"}>
-              Recent Posts
-          </h2>
-      
-          <Link
-            href="/blog"
-            className={buttonVariants({ variant: "ghost" })}
-          >
-            See more
-            <span aria-hidden="true" className="ml-2">
-              &rarr;
-            </span>
-          </Link>
-      </div>
-
-      <div className="relative">
-        <div className="mt-6 flex items-center w-full">
-          <div
-            className={cn(
-              "w-full gap-y-10  gap-x-8",
-              gridClass
-            )}
-          >
-            {recentposts?.map((post, i) => (
-              <div className="w-full flex justify-between items-center hover:bg-muted">
-      <Image
-        src={post.coverImage}
-        alt="Post cover image"
-        height = {80}
-        width = {80}
-        className="size-20 rounded-lg"
-      />
-      <div className="flex-1 flex flex-col justify-center mx-3">
-         <p className="text-lg sm:text-xl font-bold text-foreground line-clamp-2">
-             { post.title }
-         </p>
-       
-        <div className="text-sm text-muted-foreground flex gap-2">
-        <p>
-          <Moment format="MMMM Do, YYYY" date={post.publishedAt} />
-        </p>
-        &#x2022;
-        {/*<p>
-          {getBlogReadTime(blog)}
-        </p>*/}
-      </div>
-      </div>
-    </div>  {/*End post card*/}
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-    </div>
-     )
-    }
+    
     </div>
   );
 };
