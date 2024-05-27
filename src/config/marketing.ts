@@ -12,26 +12,17 @@ export const marketingConfig: MarketingConfig = {
       href: "/#work",
     },
     {
-      title: "Website development",
-      href: "/#website-development",
-    },
-
-    {
-      title: "Graphic design",
-      href: "/#graphic-design",
-    },
-    {
-      title: "Digital marketing",
-      href: "/#digital-marketting",
+      title: "Pricing",
+      href: "/#pricing",
     },
     {
       title: "Blog",
       href: "/blog",
     },
     {
-      title: "Pricing",
-      href: "/#pricing",
-    },
+      title: "About us",
+      href: "/about-us",
+    }
   ],
   footer: {
     sections: [
