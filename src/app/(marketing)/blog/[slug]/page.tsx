@@ -46,7 +46,7 @@ async function getData(slug: string) {
     "keywords": string::split(keywords, ",")
   },
 
-  "recentPosts": *[_type == "post" && slug.current !=  "${slug}"] | order(publishedAt desc)[0..5] {
+  "recentPosts": *[_type == "post" ] | order(publishedAt desc)[0..5] {
      title,
     "slug": slug.current,
     "coverImage": coverImage.asset->url,
