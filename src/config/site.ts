@@ -4,33 +4,32 @@ import { SiteConfig } from "types";
 
 
 export const siteConfig: SiteConfig = {
-  name: "Sonamax",
-  shortName: "Sonamax",
+  name: "Finiin",
+  shortName: "finiin",
   description: "We craft compelling marketing solutions for your brand.",
-  url: "http://localhost:3000/", //TODO: FIX URL
+  url: "https://finiin.vercel.app/", //TODO: FIX URL
   ogImage: "", //TODO:FIX OG IMAGE
-
   Icon: Icons.logo,
   address: {
-    street: "F9C5+Q5R, Laascaanood",
-    city: "Laascaanood",
-    region: "Sool",
-    country: "Somalia",
+    street: "Mweni Road, Nairobi, Kenya",
+    city: "Nairobi",
+    region: "Nairobi",
+    country: "Kenya",
     postalCode: "00100",
   },
   contact: {
-    telephone: "+252699992045",
+    telephone: "+254799992045",
   },
   links: [
     {
       name: "Email",
-      href: "#",
+      href: "contact@finiin.com",
       Icon: Icons.mail,
       external: true,
     },
     {
       name: "X",
-      href: "#",
+      href: "https://www.x.com/finiininc",
       Icon: Icons.twitter,
       external: true,
     },
@@ -42,13 +41,13 @@ export const siteConfig: SiteConfig = {
     },
     {
       name: "Instagram",
-      href: "https://www.instagram.com/",
+      href: "https://www.instagram.com/finiininc",
       Icon: Icons.instagram,
       external: true,
     },
     {
       name: "WhatsApp",
-      href: "https://wa.me/252634400000",
+      href: "https://wa.me/254799992045",
       Icon: Icons.whatsapp,
       external: true,
     },
