@@ -92,7 +92,7 @@ export async function generateMetadata({
 
 export const revalidate = 5;
 
-const page = async ({ params }: PageProps) => {
+const page = async ({ params: { slug } }: PageProps) => {
   const { post, recentPosts }: {post: Post; recentPosts: Partial<Post>[]} = await getData(slug);
 
   if (!post) {
