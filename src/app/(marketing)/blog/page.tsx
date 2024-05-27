@@ -50,7 +50,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <hr className="mt-8 mb-4" />
       { searchParams?.tag && <p className="my-4 text-muted-foreground text-sm my-2 md:my-4">Showing posts with tag: {searchParams?.tag}</p>}
       {posts?.length ? (
-        <div className="grid gap-10 sm:grid-cols-2">
+        <div className="grid gap-10 sm:grid-cols-2 max-md:divide-y-2">
           {posts.map((post, index) => (
             <Post post={post} key={post._id}/>
           ))}
