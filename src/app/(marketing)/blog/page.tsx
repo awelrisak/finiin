@@ -1,4 +1,5 @@
 import Post from "@/components/marketing/post";
+import {Button} from "@/components/ui/button"
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -51,7 +52,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         </div>
       </div>
       <hr className="my-8" />
-      { searchParams?.tag && <p className="text-muted-foreground text-sm my-2 md:my-4">Tag: #{searchParams?.tag}</p>}
+      { searchParams?.tag && <p className="text-muted-foreground text-sm my-2 md:my-4">Showing posts with tag: {searchParams?.tag}</p>}
       {posts?.length ? (
         <div className="grid gap-10 sm:grid-cols-2">
           {posts.map((post, index) => (
