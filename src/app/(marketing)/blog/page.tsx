@@ -13,7 +13,7 @@ async function getPosts(index?: number) {
   *[_type == "post"]{
     title,
     "slug": slug.current,
-    coverImage,
+    "coverImage": coverImage.asset->url,
     publishedAt,
     excerpt,
     tags[]-> {
@@ -51,7 +51,7 @@ export default async function BlogPage() {
           ))}
         </div>
       ) : (
-        <p>No posts published.</p>
+        <p>No posts published yet.</p>
       )}
     </div>
   );
