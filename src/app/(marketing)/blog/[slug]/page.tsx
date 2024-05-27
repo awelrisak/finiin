@@ -25,8 +25,8 @@ async function getPost(slug: string) {
   const query = `
   *[_type == "post" && slug.current == "${slug}"][0] {
     title,
-    slug,
-    coverImage,
+    "slug": slug.current,
+    "coverImage": coverImage.asset->url,
     publishedAt,
     excerpt,
     _id,
@@ -68,20 +68,20 @@ export async function generateMetadata({
       url: `${siteConfig.url}/post/${slug}`,
       title: post.title,
       description: post.excerpt,
-      images: urlForImage(post.coverImage.asset),
+      images: post.coverImage,
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: [urlForImage(post.coverImage.asset)],
+      images: [post.coverImage],
       creator: post.author[0].twitter,
     },
     keywords: post.keywords,
   };
 }
 
-export const revalidate = 60;
+export const revalidate = 5;
 
 const page = async ({ params }: PageProps) => {
   const post: Post = await getPost(params?.slug);
@@ -110,12 +110,12 @@ const page = async ({ params }: PageProps) => {
     author: post.author.map((author) => ({
       "@type": "Person",
       name: author.name,
-      url: `http://www.twitter.com${author.twitter}`,
+      url: `http://www.twitter.com/${author.twitter}`,
     })),
 
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
-    image: urlForImage(post.coverImage.asset),
+    image: post.coverImage,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": siteConfig.url,
@@ -167,8 +167,8 @@ const page = async ({ params }: PageProps) => {
       </div>
 
       <Image
-        src={urlForImage(post.coverImage.asset)}
-        alt={post.title}
+        src={post.coverImage}
+        alt="Post Cover Image"
         width={720}
         height={405}
         className="my-8 rounded-md border bg-muted transition-colors"
@@ -193,31 +193,6 @@ const page = async ({ params }: PageProps) => {
   );
 };
 
-//  <div className="">
-//  <span>
-//    Published on &nbsp;
-//    <Moment format="MMMM Do, YYYY" date={post?.publishedAt} />
-//  </span>
-//    <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
-//      {post.title}
-//    </h1>
-//    {/* <span className={`${dateFont?.className} text-purple-500`}>
-//           {new Date(post?.publishedAt).toDateString()}
-//         </span> */}
-//    <div className="mt-5">
-//      {post?.tags?.map((tag) => (
-//        <Link key={tag?._id} href={`/tag/${tag.slug.current}`}>
-//          <span className="mr-2 rounded-sm border p-1 text-sm lowercase dark:border-gray-900 dark:bg-gray-950">
-//            #{tag.name}
-//          </span>
-//        </Link>
-//      ))}
-//    </div>
-//    <Toc headings={post?.headings} />
-//  <div className={richTextStyles}>
-//    <PortableText value={post?.body} components={myPortableTextComponents} />
-//  </div>
-//  </div>;
 
 export default page;
 
@@ -230,7 +205,6 @@ const myPortableTextComponents = {
         width={720}
         height={405}
         className="my-8 rounded-md border bg-muted transition-colors"
-        priority
       />
     ),
   },
@@ -288,7 +262,6 @@ const myPortableTextComponents = {
 
 const richTextStyles = `
 mt-14
-text-justify
 max-w-2xl
 m-auto
 prose-headings:my-5
