@@ -215,7 +215,7 @@ const myPortableTextComponents = {
   listItem: {
     bullet: ({children}) => <li style={{listStyleType: 'disclosure-closed'}} className="mt-2">{children}</li>,
     number: ({children}) => <li style={{listStyleType: 'disclosure-closed'}} className="mt-2">{children}</li>
-  }
+  },
   block: {
     h2: ({ children, value }: any) => (
       <h2
