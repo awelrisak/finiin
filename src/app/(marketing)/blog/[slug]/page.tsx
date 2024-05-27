@@ -179,7 +179,7 @@ const page = async ({ params }: PageProps) => {
       <div>
         <PortableText
           value={post?.body}
-          components={myPortableTextComponents}
+          components={portableTextComponents}
         />
       </div>
       <hr className="mt-12" />
@@ -196,7 +196,7 @@ const page = async ({ params }: PageProps) => {
 
 export default page;
 
-const myPortableTextComponents = {
+const portableTextComponents: PortableTextComponents = {
   types: {
     image: ({ value }: any) => (
       <Image
@@ -257,12 +257,12 @@ const myPortableTextComponents = {
         { children }
       </h6>
     ),
-    p: ({ value }: any) => (
+    p: ({ children }: any) => (
       <p
         id={slugify(value.children[0].text)}
         className="leading-7 [&:not(:first-child)]:mt-6"
       >
-        {value.children[0].text}
+        {children}
       </p>
     ),
   },
