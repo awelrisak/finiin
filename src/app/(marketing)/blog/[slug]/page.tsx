@@ -164,7 +164,7 @@ const page = async ({ params: { slug } }: PageProps) => {
                            
                          <span>&#x2022;</span>
                            <span>
-                          {readingTime(post.plainText)}
+                          {readingTime(post.plainText).text}
                           </span>
         </div>
         <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
@@ -287,7 +287,7 @@ const page = async ({ params: { slug } }: PageProps) => {
                            
                          <span>&#x2022;</span>
                            <span>
-                          {readingTime(post.plainText)}
+                          {readingTime(post.plainText).text}
                           </span>
                         </div>
                       </div>
