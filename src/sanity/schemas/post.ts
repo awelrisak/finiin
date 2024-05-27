@@ -2,7 +2,7 @@ import { Rule } from "sanity";
 import slugify from "slugify";
 import { nanoid } from "nanoid";
 
-const customSlugify = (input: string) => {
+/*const customSlugify = (input: string) => {
   const slug = slugify(input, {
     remove: /[*+~.()'"!:@]/g,
     strict: true,
@@ -10,7 +10,7 @@ const customSlugify = (input: string) => {
   });
 
   return `${slug}-${nanoid(4)}`;
-};
+};*/
 
 export const post = {
   name: "post",
@@ -36,8 +36,7 @@ export const post = {
       fieldset: "seo",
       description: "This is the URL of the blog.",
       options: {
-        source: "title",
-        slugify: (input: string) => customSlugify(input),
+        source: "title"
       },
       validation: (Rule: Rule) => Rule.required().error("Slug is required."),
     },
