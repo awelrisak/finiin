@@ -208,6 +208,20 @@ const portableTextComponents: PortableTextComponents = {
       />
     ),
   },
+  marks: {
+    link: ({children, value}) => {
+      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
+      return (
+        <a 
+          href={value.href} 
+          rel={rel}
+          className="font-medium underline underline-offset-4"
+         >
+          {children}
+        </a>
+      )
+    },
+  },
   list: {
     bullet: ({children}) => <ul className="my-6 ml-6 list-disc">{children}</ul>,
     number: ({children}) => <ol className="my-6 ml-6 list-decimal">{children}</ol>,
