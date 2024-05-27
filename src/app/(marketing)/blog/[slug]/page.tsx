@@ -213,8 +213,8 @@ const myPortableTextComponents = {
     number: ({children}) => <ol className="my-6 ml-6 list-decimal">{children}</ol>,
   },
   listItem: {
-    bullet: ({children}) => <li style={{listStyleType: 'disclosure-closed'}} className="mt-2">{children}</li>,
-    number: ({children}) => <li style={{listStyleType: 'disclosure-closed'}} className="mt-2">{children}</li>
+    bullet: ({children}) => <li className="mt-2">{children}</li>,
+    number: ({children}) => <li className="mt-2">{children}</li>
   },
   block: {
     h2: ({ children, value }: any) => (
