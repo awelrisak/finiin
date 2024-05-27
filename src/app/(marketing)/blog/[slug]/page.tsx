@@ -214,7 +214,7 @@ const page = async ({ params: { slug } }: PageProps) => {
            <span>Tags:&nbsp;</span>
            {
             post?.tags.map((tag, i) => (
-            <Button variant="link" asChild key={tag._id}>
+            <Button variant="outlinr" asChild key={tag._id}>
               <Link href={`/blog?tag=${tag.slug}`}>
                 <span>
                   {tag.name}
@@ -254,7 +254,7 @@ const page = async ({ params: { slug } }: PageProps) => {
               <div className="mt-6 flex items-center w-full">
                 <div className="w-full gap-y-10 gap-x-8">
                   {recentPosts?.map((post, i) => (
-                    <div key={i} className="w-full flex justify-between items-center hover:bg-muted">
+                    <div key={post.slug} className="w-full flex justify-between items-center hover:bg-muted">
                       <Image
                         src={post.coverImage}
                         alt="Post cover image"
