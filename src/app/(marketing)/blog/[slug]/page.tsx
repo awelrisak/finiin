@@ -135,7 +135,7 @@ const page = async ({ params: { slug } }: PageProps) => {
   };
 
   return (
-    <div className="pt-1 pb-6 flex flex-col lg:flex-row gap-4 md:gap-6">
+    <div className="min-h-screen lg:pt-1 lg:pb-6 flex flex-col lg:flex-row gap-4 md:gap-6">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd) }}
@@ -152,7 +152,7 @@ const page = async ({ params: { slug } }: PageProps) => {
             See all blogs
           </Link>
         </div>
-    <article className="flex-1 container relative max-w-3xl py-6 lg:py-10">
+    <article className="flex-1 container overflow-auto relative max-w-3xl py-6 lg:py-10">
       <div className="absolute left-[-200px]  flex-col xl:inline-flex">
         <Link href="/blog" className={buttonVariants({ variant: "ghost" })}>
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
