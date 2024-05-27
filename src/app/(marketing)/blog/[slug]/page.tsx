@@ -241,9 +241,9 @@ const page = async ({ params: { slug } }: PageProps) => {
                         className="size-20 rounded-lg"
                       />
                       <div className="flex-1 space-y-2 mx-3">
-                        <p className="text-lg sm:text-xl font-bold text-foreground leading-tight">
+                        <h3 className="sm:text-lg font-semibold leading-tight">
                           {post.title}
-                        </p>
+                        </h3>
 
                         <div className="text-sm text-muted-foreground flex gap-2">
                           <p>
