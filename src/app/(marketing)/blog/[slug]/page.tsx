@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { Icons } from "@/components/shared/icons";
 import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
+import readingTime from "reading-time"
 
 interface PageProps {
   params: {
@@ -272,15 +273,15 @@ const page = async ({ params: { slug } }: PageProps) => {
                           {post.title}
                         </h3>
 
-                        <div className="text-sm text-muted-foreground flex gap-2">
-                          <p>
+                        <div className="text-sm text-muted-foreground space-x-2">
+                          <span>
                             <Moment format="MMMM Do, YYYY" date={post.publishedAt} />
-                          </p>
+                          </span>
                            
-                         {/* &#x2022;
-                           <p>
-                          {getBlogReadTime(blog)}
-                          </p> */}
+                         <span>&#x2022;</span>
+                           <span>
+                          {readingTime(post.plainText)}
+                          </span>
                         </div>
                       </div>
                     </div> /* End post card */
