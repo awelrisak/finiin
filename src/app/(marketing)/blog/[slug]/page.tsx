@@ -135,7 +135,7 @@ const page = async ({ params: { slug } }: PageProps) => {
   };
 
   return (
-    <div className="min-h-screen lg:pt-1 lg:pb-6 flex flex-col lg:flex-row gap-4 md:gap-6">
+    <div className="min-h-screen bg-yellow-300 lg:pt-1 lg:pb-6 flex flex-col lg:flex-row gap-4 md:gap-6">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd) }}
@@ -199,7 +199,7 @@ const page = async ({ params: { slug } }: PageProps) => {
         />
       </div>
       <hr className="mt-12" />
-      <div className="max-xl:flex hidden justify-center py-6 lg:py-10">
+      <div className="flex xl:hidden justify-center py-6 lg:py-10">
         <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }))}>
           <Icons.chevronLeft className="mr-2 size-4" />
           See all posts
