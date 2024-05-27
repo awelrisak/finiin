@@ -5,6 +5,7 @@ import { Price as PriceType } from "types";
 import { Icons } from "../shared/icons";
 import { cn } from "@/lib/utils";
 import { BackgroundGradient } from "../ui/background-gradient";
+import AnimatedGradientText  from "../ui/animated-gradient-text";
 import React from "react";
 
 interface PricingPops {
@@ -42,7 +43,7 @@ interface PriceProps {
 
 function Price({ price }: PriceProps) {
   const Wrapper = price.super ? BackgroundGradient : "div";
-
+  const PriceWrapper = price.super ? AnimatedGradientText : "span"
   return (
     <Wrapper className="mx-auto flex max-w-lg flex-col rounded-3xl border bg-card p-6 text-center text-card-foreground shadow xl:p-8" animate>
       <div>
@@ -51,7 +52,7 @@ function Price({ price }: PriceProps) {
           {price.description}
         </p>
         <div className="my-8 flex items-baseline justify-center">
-          <span className="mr-2 text-5xl font-extrabold">{`${price.currency}${price.price}`}</span>
+          <PriceWrapper className="mr-2 text-5xl font-extrabold">{`${price.currency}${price.price}`}</PriceWrapper>
           <span className="text-muted-foreground">/month</span>
         </div>
 
