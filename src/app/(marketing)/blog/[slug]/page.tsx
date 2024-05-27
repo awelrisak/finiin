@@ -254,7 +254,12 @@ const page = async ({ params: { slug } }: PageProps) => {
               <div className="mt-6 flex items-center w-full">
                 <div className="w-full gap-y-10 gap-x-8">
                   {recentPosts?.map((post, i) => (
-                    <div key={post.slug} className="w-full flex justify-between items-center hover:bg-muted">
+                    <div key={post.slug} className="relative w-full flex justify-between items-center hover:bg-muted">
+                      <Link 
+                        href={`/blog/${post.slug}`} 
+                        className="absolute inset-0">
+                        <span className="sr-only">View Article</span>
+                      </Link>
                       <Image
                         src={post.coverImage}
                         alt="Post cover image"
