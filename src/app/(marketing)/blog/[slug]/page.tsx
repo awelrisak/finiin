@@ -216,7 +216,7 @@ const page = async ({ params: { slug } }: PageProps) => {
     </article>
 
     {recentPosts && (
-        <div className="lg:h-full-dvh bg-lime-200 lg:overflow-auto max-w-2xl w-fit md:sticky md:top-20 relative px-6">
+        <div className="lg:h-full-dvh lg:overflow-auto max-w-2xl w-fit md:sticky md:top-20 relative px-6">
           <section className="lg:max-w-xs">
             <div className="flex items-baseline justify-between mb-3">
               <h2 className="text-lg font-semibold md:text-2xl">Recent Posts</h2>
