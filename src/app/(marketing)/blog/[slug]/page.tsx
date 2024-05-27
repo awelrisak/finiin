@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import { Post } from "types";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/shared/icons";
 import { siteConfig } from "@/config/site";
@@ -207,12 +207,32 @@ const page = async ({ params: { slug } }: PageProps) => {
         />
       </div>
       <hr className="mt-12" />
+
+      {
+       post?.tags.length && (
+         <div className="my-4">
+           <span>Tags:&nbsp;</span>
+           post?.tags.map((tag, i) => (
+            <Button variant="link" asChild key={tag._id}>
+              <Link href={`/blog?tag=${tag.slug}`}>
+                <span>
+                  {tag.name}
+                </span>
+               </Link>
+            </Button>
+            
+           ))
+         </div>
+       )
+      }
+      
       <div className="flex xl:hidden justify-center py-6 lg:py-10">
         <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }))}>
           <Icons.chevronLeft className="mr-2 size-4" />
           See all posts
         </Link>
       </div>
+      
     </article>
 
     {recentPosts && (
