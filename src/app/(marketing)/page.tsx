@@ -175,9 +175,9 @@ const services = [
         <PiMonitor className="h-8 w-8 text-blue-600" />
       </div>
     ),
-    title: "Website Design",
+    title: "Website Development",
     description:
-      "We build fully responsive websites that look great on all devices. Our websites are designed to convert visitors into customers.",
+      "We design and build fully responsive websites that look great on all devices. Our websites are designed to convert visitors into customers.",
   },
   {
     icon: (
