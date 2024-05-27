@@ -2,7 +2,7 @@ import slugify from "slugify";
 
 import Toc from "@/components/marketing/toc";
 import Moment from "@/components/ui/moment";
-import { PortableText } from "@portabletext/react";
+import {PortableText, toPlainText, PortableTextComponents} from '@portabletext/react'
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -176,7 +176,7 @@ const page = async ({ params }: PageProps) => {
       />
 
       {/* <Toc headings={post?.headings} /> */}
-      <div className={richTextStyles}>
+      <div>
         <PortableText
           value={post?.body}
           components={myPortableTextComponents}
@@ -208,45 +208,53 @@ const myPortableTextComponents = {
       />
     ),
   },
+  list: {
+    bullet: ({children}) => <ul className="my-6 ml-6 list-disc">{children}</ul>,
+    number: ({children}) => <ol className="my-6 ml-6 list-decimal">{children}</ol>,
+  },
+  listItem: {
+    bullet: ({children}) => <li style={{listStyleType: 'disclosure-closed'}} className="mt-2">{children}</li>,
+    number: ({children}) => <li style={{listStyleType: 'disclosure-closed'}} className="mt-2">{children}</li>
+  }
   block: {
-    h2: ({ value }: any) => (
+    h2: ({ children, value }: any) => (
       <h2
-        id={slugify(value.children[0].text)}
+        id={slugify(toPlainText(value))}
         className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0"
       >
-        {value.children[0].text}
+        {children}
       </h2>
     ),
-    h3: ({ value }: any) => (
+    h3: ({ children, value  }: any) => (
       <h3
-        id={slugify(value.children[0].text)}
+        id={slugify(toPlainText(value))}
         className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight"
       >
-        {value.children[0].text}
+        {children}
       </h3>
     ),
-    h4: ({ value }: any) => (
+    h4: ({ children, value  }: any) => (
       <h4
-        id={slugify(value.children[0].text)}
+        id={slugify(toPlainText(value))}
         className="scroll-m-20 text-xl font-semibold tracking-tight"
       >
-        {value.children[0].text}
+        {children}
       </h4>
     ),
-    h5: ({ value }: any) => (
+    h5: ({ children, value }: any) => (
       <h5
-        id={slugify(value.children[0].text)}
+        id={slugify(toPlainText(value))}
         className="mb-3 text-2xl font-bold"
       >
-        {value.children[0].text}
+        {children}
       </h5>
     ),
-    h6: ({ value }: any) => (
+    h6: ({ children, value }: any) => (
       <h6
-        id={slugify(value.children[0].text)}
+        id={slugify(toPlainText(value))}
         className="mb-3 text-xl font-bold"
       >
-        {value.children[0].text}
+        { children }
       </h6>
     ),
     p: ({ value }: any) => (
