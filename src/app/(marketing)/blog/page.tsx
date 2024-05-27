@@ -8,6 +8,7 @@ export const metadata = {
   title: "Blog",
 };
 
+
 async function getPosts(index?: number) {
   const query = `
   *[_type == "post"]{
@@ -28,13 +29,20 @@ async function getPosts(index?: number) {
   return posts;
 }
 
-export default async function BlogPage() {
+interface BlogPageProps {
+  searchParams?: { 
+      [key: string]: string | string[] | undefined 
+  };
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
   const posts: Array<PostType> = await getPosts();
 
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
         <div className="flex-1 space-y-4">
+          { searchParams.tag && <p className="text-muted-foreground text-sm">#{searchParams.tag}</p>}
           <h1 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl">
             Blog
           </h1>
