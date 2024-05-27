@@ -199,9 +199,9 @@ const page = async ({ params: { slug } }: PageProps) => {
         />
       </div>
       <hr className="mt-12" />
-      <div className="flex justify-center py-6 lg:py-10">
+      <div className="max-xl:flex hidden justify-center py-6 lg:py-10">
         <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }))}>
-          <Icons.chevronLeft className="mr-2 h-4 w-4" />
+          <Icons.chevronLeft className="mr-2 size-4" />
           See all posts
         </Link>
       </div>
