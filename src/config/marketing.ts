@@ -143,6 +143,6 @@ export const marketingConfig: MarketingConfig = {
         ],
       },
     ],
-    copyYears: "2023",
+    copyYears: "2024",
   },
 };
