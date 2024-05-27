@@ -93,6 +93,7 @@ interface Post {
   author: {
     name: string;
     twitter: string;
+    image: string;
   }[];
   plainText: string;
   keywords: string[]
