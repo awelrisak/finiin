@@ -230,7 +230,7 @@ const page = async ({ params: { slug } }: PageProps) => {
 
             <div className="relative">
               <div className="mt-6 flex items-center w-full">
-                <div className={cn('w-full gap-y-10 gap-x-8', gridClass)}>
+                <div className="w-full gap-y-10 gap-x-8">
                   {recentPosts?.map((post, i) => (
                     <div key={i} className="w-full flex justify-between items-center hover:bg-muted">
                       <Image
