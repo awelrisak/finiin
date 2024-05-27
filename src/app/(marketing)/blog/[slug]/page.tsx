@@ -148,7 +148,7 @@ const page = async ({ params: { slug } }: PageProps) => {
               "hidden xl:inline-flex gap-2 items-center ml-auto"
             )}
           >
-            <ChevronLeft className="h-4 w-4" />
+            <Icons.chevronLeft className="h-4 w-4" />
             See all blogs
           </Link>
         </div>
