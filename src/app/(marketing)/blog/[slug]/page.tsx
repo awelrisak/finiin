@@ -35,7 +35,7 @@ async function getData(slug: string) {
     body,
     tags[]-> {
       _id,
-      slug,
+      "slug": slug.current,
       name
     },
     author[]->{
