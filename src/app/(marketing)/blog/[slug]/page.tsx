@@ -259,7 +259,6 @@ const portableTextComponents: PortableTextComponents = {
     ),
     p: ({ children }: any) => (
       <p
-        id={slugify(value.children[0].text)}
         className="leading-7 [&:not(:first-child)]:mt-6"
       >
         {children}
