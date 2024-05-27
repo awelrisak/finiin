@@ -52,7 +52,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       {posts?.length ? (
         <div className="grid gap-10 sm:grid-cols-2 max-md:divide-y-2">
           {posts.map((post, index) => (
-            <Post post={post} key={post._id}/>
+            <Post post={post} key={post.slug}/>
           ))}
         </div>
       ) : (
