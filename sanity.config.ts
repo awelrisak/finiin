@@ -18,7 +18,7 @@ export default defineConfig({
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
   name: siteConfig.name,
-  icon: siteConfig.icon,
+  icon: siteConfig.Icon,
   plugins: [
     structureTool(),
     // Vision is a tool that lets you query your content with GROQ in the studio
