@@ -21,9 +21,10 @@ interface PageProps {
   };
 }
 
-async function getPost(slug: string) {
+async function getData(slug: string) {
   const query = `
-  *[_type == "post" && slug.current == "${slug}"][0] {
+  {
+  "post": *[_type == "post" && slug.current == "${slug}"][0] {
     title,
     "slug": slug.current,
     "coverImage": coverImage.asset->url,
@@ -43,17 +44,25 @@ async function getPost(slug: string) {
     },
     "plainText": pt::text(body),
     "keywords": string::split(keywords, ",")
+  },
+
+  "recentPosts": *[_type == "post" && slug.current !=  "${slug}"] | order(publishedAt desc)[0..5] {
+     title,
+    "slug": slug.current,
+    "coverImage": coverImage.asset->url
+  }
+  
   }
   `;
 
-  const post = await client.fetch(query);
-  return post;
+  const data = await client.fetch(query);
+  return data;
 }
 
 export async function generateMetadata({
   params: { slug },
 }: PageProps): Promise<Metadata> {
-  const post: Post = await getPost(slug);
+  const { post }: {post: Post; recentPosts: Partial<Post>[]} = await getData(slug);
 
   if (!post) {
     notFound();
@@ -84,7 +93,7 @@ export async function generateMetadata({
 export const revalidate = 5;
 
 const page = async ({ params }: PageProps) => {
-  const post: Post = await getPost(params?.slug);
+  const { post, recentPosts }: {post: Post; recentPosts: Partial<Post>[]} = await getData(slug);
 
   if (!post) {
     notFound();
