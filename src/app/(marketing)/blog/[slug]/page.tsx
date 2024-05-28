@@ -265,7 +265,7 @@ const page = async ({ params: { slug } }: PageProps) => {
       
     </article>
 
-    <div className="lg:h-full-dvh flex flex-col gap-8 max-w-2xl md:sticky md:top-20 relative px-6">
+    <div className="lg:h-full-dvh flex flex-col gap-10 max-w-2xl md:sticky md:top-20 relative px-6">
 
 
     {relatedPosts && (
