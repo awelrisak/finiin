@@ -117,7 +117,7 @@ export const post = {
     select: {
       title: "title",
       media: "coverImage",
-      subtitle: "slug.current",
+      subtitle: "publishedAt",
     },
   },
 };
