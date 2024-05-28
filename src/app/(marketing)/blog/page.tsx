@@ -10,9 +10,9 @@ export const metadata = {
 };
 
 
-async function getPosts(index?: number) {
+async function getPosts(index?: number): Promise<Partial<PostType>[]> {
   const query = `
-  *[_type == "post"]{
+  *[_type == "post"] | order(publishedAt desc){
     title,
     "slug": slug.current,
     "coverImage": coverImage.asset->url,
@@ -33,7 +33,7 @@ interface BlogPageProps {
 }
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const posts: Array<PostType> = await getPosts();
+  const posts = await getPosts();
 
   return (
     <div className="container max-w-4xl py-6 lg:py-10">
