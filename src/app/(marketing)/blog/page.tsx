@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 
-async function getPosts(index?: number): Promise<Partial<PostType>[]> {
+async function getPosts(index?: number): Promise<PostType[]> {
   const query = `
   *[_type == "post"] | order(publishedAt desc){
     title,
