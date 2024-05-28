@@ -52,7 +52,8 @@ async function getData(slug: string) {
      title,
     "slug": slug.current,
     "coverImage": coverImage.asset->url,
-    publishedAt
+    publishedAt,
+    "plainText": pt::text(body)
   }
   
   }
