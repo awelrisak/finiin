@@ -25,7 +25,6 @@ interface PageProps {
 interface Data { 
   post: Post; 
   recentPosts: Partial<Post>[]; 
-  relatedPosts: Partial<Post>[];
 }
 
 async function getData(slug: string): Promise<Data>  {
@@ -55,14 +54,6 @@ async function getData(slug: string): Promise<Data>  {
   },
 
   "recentPosts": *[_type == "post" ] | order(publishedAt desc)[0..5] {
-     title,
-    "slug": slug.current,
-    "coverImage": coverImage.asset->url,
-    publishedAt,
-    "plainText": pt::text(body)
-  },
-
-  "relatedPosts": *[_type == "post" && ^post.tags.current in tags[]->.slug.current  ] | order(publishedAt desc)[0..5] {
      title,
     "slug": slug.current,
     "coverImage": coverImage.asset->url,
@@ -111,7 +102,7 @@ export async function generateMetadata({
 export const revalidate = 5;
 
 const page = async ({ params: { slug } }: PageProps) => {
-  const { post, recentPosts, relatedPosts } = await getData(slug);
+  const { post, recentPosts } = await getData(slug);
 
   if (!post) {
     notFound();
@@ -262,61 +253,7 @@ const page = async ({ params: { slug } }: PageProps) => {
     </article>
 
 
-    {relatedPosts && (
-        <div className="lg:h-full-dvh lg:overflow-auto max-w-2xl w-fit md:sticky md:top-20 relative px-6">
-          <section className="lg:max-w-xs">
-            <div className="flex items-baseline justify-between mb-3">
-              <h2 className="text-lg font-semibold md:text-2xl">Related Posts</h2>
-
-              <Link href="/blog" className={cn(buttonVariants({ variant: 'ghost' }), "font-light")}>
-                See more
-                <span aria-hidden="true" className="ml-2">
-                  &rarr;
-                </span>
-              </Link>
-            </div>
-
-            <div className="relative">
-              <div className="mt-6 flex items-center w-full">
-                <div className="w-full gap-y-10 gap-x-8">
-                  {recentPosts?.map((post, i) => (
-                    <div key={post.slug} className="relative w-full flex justify-between items-center hover:bg-muted">
-                      <Link 
-                        href={`/blog/${post.slug}`} 
-                        className="absolute inset-0">
-                        <span className="sr-only">View Article</span>
-                      </Link>
-                      <Image
-                        src={post.coverImage}
-                        alt="Post cover image"
-                        height={80}
-                        width={80}
-                        className="size-20 rounded-lg"
-                      />
-                      <div className="flex-1 space-y-2 mx-3">
-                        <h3 className="md:text-lg font-semibold leading-tight">
-                          {post.title}
-                        </h3>
-
-                        <div className="text-sm text-muted-foreground space-x-2">
-                          <span>
-                            <Moment format="MMMM Do, YYYY" date={post.publishedAt} />
-                          </span>
-                           
-                         <span>&#x2022;</span>
-                           <span>
-                          {readingTime(post?.plainText || "").text}
-                          </span>
-                        </div>
-                      </div>
-                    </div> /* End post card */
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      )}
+    
 
     {recentPosts && (
         <div className="lg:h-full-dvh lg:overflow-auto max-w-2xl w-fit md:sticky md:top-20 relative px-6">
