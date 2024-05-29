@@ -1,16 +1,16 @@
 import "@/styles/globals.css";
 
-import NextTopLoader from "nextjs-toploader";
+import type { Metadata, Viewport } from "next";
 import { fontHeading, inter, lora } from "@/app/ui/fonts";
-import { siteConfig } from "@/config/site";
+
+import NextTopLoader from "nextjs-toploader";
+import { TailwindIndicator } from "@/components/shared/tailwind-indicator";
+import { ThemeProvider } from "@/components/shared/theme-provider";
 // import { Analytics } from "@vercel/analytics/react";
 // import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
-import { TailwindIndicator } from "@/components/shared/tailwind-indicator";
-import { ThemeProvider } from "@/components/shared/theme-provider";
 import { cn } from "@/lib/utils";
-import type { Metadata, Viewport } from "next";
-
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   applicationName: siteConfig.name,
