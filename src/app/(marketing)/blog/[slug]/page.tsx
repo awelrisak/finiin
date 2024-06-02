@@ -229,7 +229,7 @@ const page = async ({ params: { slug } }: PageProps) => {
       />
 
       {/* <Toc headings={post?.headings} /> */}
-      <div className="snap-both">
+      <div>
         <PortableText
           value={post?.body}
           components={portableTextComponents}
@@ -401,13 +401,13 @@ const portableTextComponents: PortableTextComponents = {
     link: ({children, value}) => {
       const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
       return (
-        <a 
+        <Link
           href={value.href} 
           rel={rel}
           className="font-medium underline underline-offset-4"
          >
           {children}
-        </a>
+        </Link>
       )
     },
   },
@@ -420,6 +420,21 @@ const portableTextComponents: PortableTextComponents = {
     number: ({children}) => <li className="mt-2">{children}</li>
   },
   block: {
+    normal: ({ children }: any) => (
+      <p
+        className="leading-7 [&:not(:first-child)]:mt-6"
+      >
+        {children}
+      </p>
+    ),
+    h1: ({ children, value }: any) => (
+      <h1
+        id={slugify(toPlainText(value))}
+        className="mt-2 scroll-m-20 text-4xl font-bold tracking-tight"
+      >
+        {children}
+      </h1>
+    ),
     h2: ({ children, value }: any) => (
       <h2
         id={slugify(toPlainText(value))}
@@ -460,26 +475,13 @@ const portableTextComponents: PortableTextComponents = {
         { children }
       </h6>
     ),
-    p: ({ children }: any) => (
-      <p
-        className="leading-7 [&:not(:first-child)]:mt-6"
+    blockquote: ({ children, value }: any) => (
+      <quote
+        id={slugify(toPlainText(value))}
+        className="mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground"
       >
-        {children}
-      </p>
+        { children }
+      </quote>
     ),
   },
 };
-
-const richTextStyles = `
-mt-14
-max-w-2xl
-m-auto
-prose-headings:my-5
-prose-heading:text-2xl
-prose-p:mb-5
-prose-p:leading-7
-prose-ul:list-decimal
-prose-ol:list-disc
-prose-li:leading-7
-prose-li:ml-4
-`;
