@@ -476,12 +476,12 @@ const portableTextComponents: PortableTextComponents = {
       </h6>
     ),
     blockquote: ({ children, value }: any) => (
-      <quote
+      <blockquote
         id={slugify(toPlainText(value))}
         className="mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground"
       >
         { children }
-      </quote>
+      </blockquote>
     ),
   },
 };
