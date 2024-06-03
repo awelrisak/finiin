@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { MainNavItem } from "types";
 import { useActiveItem } from "@/hooks/use-active-item";
 import slugify from "slugify";
+import { Button } from "../ui/button";
 
 interface MainNavProps {
   items?: MainNavItem[];
@@ -71,13 +72,13 @@ export function Navbar({ items, children }: MainNavProps) {
           >
             Contact
           </Link>
-      <button
+      <Button
         className="flex items-center space-x-2 md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
         {showMobileMenu ? <Icons.close /> : <Icons.menu />}
-       {/* <span className="font-bold">Menu</span>*/}
-      </button>
+       <span className="sr-only">Menu</span>
+      </Button>
       </div>
       {showMobileMenu && items && (
         <Menubar
