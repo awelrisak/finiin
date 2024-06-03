@@ -94,17 +94,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           lora.variable,
         )}
       >
-        <main className="min-h-full-dvh relative w-full">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-
-          <NextTopLoader
+        <NextTopLoader
             color="currentColor"
             initialPosition={0.08}
             crawlSpeed={200}
@@ -119,7 +109,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
             zIndex={1600}
             showAtBottom={false}
           />
-          <Toaster position="top-center" richColors />
+          <Toaster 
+            position="top-center" 
+            richColors 
+          />
+        <main className="min-h-full-dvh relative w-full">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
           <TailwindIndicator />
           {/* <Analytics /> */}
           {/* <SpeedInsights /> */}

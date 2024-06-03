@@ -3,6 +3,7 @@ import { Post as PostType } from "types";
 import Image from "next/image";
 import Moment from "../ui/moment";
 import { urlForImage } from "@/sanity/lib/image";
+import readingTime from "reading-time"
 
 interface Props {
   post: PostType;
@@ -13,7 +14,7 @@ const Post = ({ post, }: Props) => {
   return (
     <article key={post._id} className="group relative flex flex-col space-y-2">
       <Image
-        src={urlForImage(post.coverImage.asset)}
+        src={post.coverImage}
         alt="Post cover image"
         width={804}
         height={452}
@@ -25,13 +26,18 @@ const Post = ({ post, }: Props) => {
 
       <h2 className="text-2xl font-extrabold">{post.title}</h2>
 
-      <p className="text-muted-foreground line-clamp-3">{post.excerpt}</p>
+      <p className="text-muted-foreground">{post.excerpt}</p>
 
-      <Moment
-        date={post.publishedAt}
-        format="MMMM Do, YYYY"
-        className="text-sm text-muted-foreground"
-      />
+      <div className="text-sm text-muted-foreground space-x-2">
+                          <span>
+                            <Moment format="MMMM Do, YYYY" date={post.publishedAt} />
+                          </span>
+                           
+                         <span>&#x2022;</span>
+                           <span>
+                          {readingTime(post?.plainText || "").text}
+                          </span>
+                        </div>
 
       <Link href={`/blog/${post.slug}`} className="absolute inset-0">
         <span className="sr-only">View Article</span>

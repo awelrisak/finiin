@@ -7,7 +7,7 @@ import { pagebuilderTool } from "@nuagedelait/sanity-pagebuilder";
 
 import {apiVersion, dataset, projectId} from '@/sanity/env'
 import {schema} from '@/sanity/schema'
-import { Icons } from '@/components/shared/icons'
+import { siteConfig } from "@/config/site";
 
 export default defineConfig({
   basePath: "/studio",
@@ -15,16 +15,12 @@ export default defineConfig({
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
-  name: "Sonamax",
-  icon: Icons.logo,
+  name: siteConfig.name,
+  icon: siteConfig.Icon,
   plugins: [
     structureTool(),
-    visionTool({ defaultApiVersion: apiVersion }),
-    // pagebuilderTool( {
-    //   addBlocksSchemas: [  ],
-    //   addContentSchemas: [],
-    //   addManagmentSchemas: [] ,
-    //   api: apiVersion
-    // }),
+    // Vision is a tool that lets you query your content with GROQ in the studio
+    // https://www.sanity.io/docs/the-vision-plugin
+    //visionTool({defaultApiVersion: apiVersion}),
   ],
 });
