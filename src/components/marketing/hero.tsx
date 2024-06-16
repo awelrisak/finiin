@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative py-6">
+    <div className="relative py-6 min-h-[calc(100dvh-5rem)]">
       <Spotlight
         className="-top-40 left-0 fill-white dark:fill-orange-900 md:-top-20 md:left-60"
         // fill="white"
