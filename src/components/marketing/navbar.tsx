@@ -75,6 +75,7 @@ export function Navbar({ items, children }: MainNavProps) {
       <Button
         className="flex items-center space-x-2 md:hidden"
         variant="outline"
+        size="icon"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
         {showMobileMenu ? <Icons.close /> : <Icons.menu />}
