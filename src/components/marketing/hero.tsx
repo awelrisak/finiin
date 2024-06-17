@@ -21,7 +21,7 @@ export default function Hero() {
 
       <div className="my-4" />
 
-      <div className="mx-auto my-6 flex w-48 items-center justify-center p-2">
+      <div className="md:mx-auto my-6 flex w-48 items-center justify-center p-2">
         <Button
           as={Link}
           href="book-a-call"
