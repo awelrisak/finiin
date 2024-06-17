@@ -12,12 +12,11 @@ export default function Hero() {
       />
 
       <h1 className="text-balance bg-gradient-to-b from-neutral-950 to-neutral-500 bg-clip-text px-6 pb-5 text-center font-heading text-4xl text-transparent dark:from-neutral-50 dark:to-neutral-700 md:text-7xl">
-        Create, grow, and <br /> scale your business
+        More Customers. More Sales. <br/> Finiin Makes it Possible.
       </h1>
 
       <p className="mx-auto mb-6 mt-4 max-w-lg  px-4 text-center text-lg font-normal text-muted-foreground">
-        Custom tailored solutions for your business. We are a team of creatives
-        who are excited to help you grow your business.
+        Whether you need a website, app, or marketing assistance, we've got you covered. <br /> We offer a full range of services to help you succeed online.
       </p>
 
       <div className="my-4" />
