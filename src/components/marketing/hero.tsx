@@ -16,7 +16,9 @@ export default function Hero() {
       </h1>
 
       <p className="mx-auto mb-6 mt-4 max-w-lg  px-4 text-center text-lg font-normal text-muted-foreground">
-        Whether you need a website, app, or marketing assistance, we've got you covered. <br /> We offer a full range of services to help you succeed online.
+          Whether you need a website, app, or marketing assistance, we&apos;ve got you covered. 
+          <br /> 
+          We offer a full range of services to help you succeed online.
       </p>
 
       <div className="my-4" />
